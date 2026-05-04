@@ -21,11 +21,15 @@ env/
 # Notebooks
 .ipynb_checkpoints/
 
-# Generated study artifacts — large, regenerable
-data/generated/
+# Data — see data/README.md for the full policy.
+# raw/, generated/ are regenerable and gitignored. interim/ is "commit
+# selectively" — contents ignored by default, allow .gitkeep so the dir
+# is tracked. processed/ and results/ ARE committable (sample frames,
+# run manifests, aggregated results, per-run scores).
 data/raw/
-data/processed/
-*.parquet
+data/generated/
+data/interim/*
+!data/interim/.gitkeep
 
 # Editor / OS
 .DS_Store

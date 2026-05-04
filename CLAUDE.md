@@ -30,6 +30,10 @@ When this format is reused for a new investigation, copy this file as-is and upd
 
 **Cross-reference rule.** When editing a doc that another doc depends on, update both. The Q-numbering, hypothesis numbering, evaluator tables, and Claude's role descriptions are deliberately repeated across files; keep them aligned. (See §3.)
 
+**Data philosophy.** See [`data/README.md`](data/README.md). Three commitments: `data/raw/` is immutable; every transformation is provenanced; notebooks are exploration, `src/` is canonical.
+
+**Notebook conventions.** See [`notebooks/README.md`](notebooks/README.md) for the `NN.NN-AB-description.ipynb` filename schema and etiquette.
+
 ## 3. Numbering conventions
 
 These are the most-violated conventions when working at speed. Get them right.
@@ -171,6 +175,8 @@ Pilot runs may happen *before* the freeze and may inform what gets frozen. The f
 - **Match charter Q-numbering and hypothesis H-numbering.** Don't introduce parallel local numberings.
 - **Read `methodology.md` before changing the pipeline.** It is the source of truth for "how the run works."
 - **Treat `.env.example` and `lc_client.py`-style modules as code-doc cross-references.** If `.env.example` says a var is required, the code should read it.
+- **Notebook filenames follow `NN.NN-AB-description.ipynb`** (see [`notebooks/README.md`](notebooks/README.md)). Reject any new notebook that doesn't conform.
+- **Treat `data/raw/` as immutable.** Re-fetch rather than patch in place. See [`data/README.md`](data/README.md).
 
 ### Sometimes
 
