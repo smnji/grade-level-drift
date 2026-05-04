@@ -76,19 +76,27 @@ class LCClient:
         self,
         framework_uuid: str,
     ) -> Iterator[dict[str, Any]]:
-        """Yield every academic standard inside a framework, paginated."""
-        page = 1
+        """Yield every academic standard inside a framework, paginated.
+
+        The LC API uses cursor-based pagination: each response carries
+        `pagination.nextCursor` and `pagination.hasMore`. Pass the cursor
+        back in the next request via `?cursor=`.
+        """
+        cursor: str | None = None
         while True:
             payload = self._get(
                 "/academic-standards",
                 standardsFrameworkCaseIdentifierUUID=framework_uuid,
-                page=page,
+                cursor=cursor,
             )
             for item in payload.get("data", []):
                 yield item
-            if not payload.get("pagination", {}).get("hasNextPage", False):
+            pagination = payload.get("pagination", {})
+            if not pagination.get("hasMore", False):
                 break
-            page += 1
+            cursor = pagination.get("nextCursor")
+            if not cursor:
+                break
 
     # ---- single standard -----------------------------------------------
 
