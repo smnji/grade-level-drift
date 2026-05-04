@@ -58,6 +58,8 @@ These are the most-violated conventions when working at speed. Get them right.
 
 ### ADRs
 
+- ADRs follow **strict MADR-full format**. The blank template is at [`docs/decisions/template.md`](docs/decisions/template.md); the section ordering and frontmatter (`status`, `date`, `decision-makers`, `consulted`, `informed`) are part of the convention, not aesthetic preferences.
+- Create a new ADR with `adr new "Title"` (requires `brew install adr-tools` locally; the `.adr-dir` file at the repo root already points the CLI at `docs/decisions/`). Hand-copying [`template.md`](docs/decisions/template.md) and incrementing the number works equally well.
 - Sequential: `0001`, `0002`, `0003`, ... by acceptance order.
 - Never edited once **Status: Accepted**. To reverse a decision, write a new ADR and add `Supersedes: 0NNN` to its frontmatter and `Superseded-by: 0NNN` to the original (the only edit allowed on an accepted ADR).
 - An ADR is for decisions that are expensive to undo. If a decision is reversible in five minutes by re-running a script, write a research-log entry instead.
