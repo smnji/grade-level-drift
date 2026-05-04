@@ -1,0 +1,22 @@
+project:
+  type: default
+  output-dir: _site
+
+bibliography: references.bib
+csl: csl/apa.csl
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+  pdf:
+    toc: true
+    number-sections: true
+    documentclass: article
+    geometry:
+      - margin=1in
+    fontsize: 11pt
+    linestretch: 1.15
+    colorlinks: true

@@ -22,3 +22,12 @@ scipy>=1.13
 # Notebooks
 jupyter>=1.0
 ipykernel>=6.29
+
+# --- non-Python dependencies ---
+# Quarto (https://quarto.org) is a separate binary, not pip-installable.
+# Used to render docs/research-proposal.qmd to HTML/PDF.
+#   macOS:    brew install --cask quarto
+#   Linux:    download .deb / .rpm from quarto.org/docs/get-started/
+# Render via the convenience script:
+#   bin/render
+# (writes to docs/_site/research-proposal.{html,pdf})

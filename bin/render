@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Render the research proposal (and any other .qmd in docs/) to PDF + HTML.
+# Requires: quarto installed locally (`brew install --cask quarto`).
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+quarto render docs/research-proposal.qmd --to pdf,html
+echo "Rendered: docs/_site/research-proposal.html and docs/_site/research-proposal.pdf"

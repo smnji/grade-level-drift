@@ -22,7 +22,9 @@ When this format is reused for a new investigation, copy this file as-is and upd
 | [`docs/charter.md`](docs/charter.md) | Canonical question map | Only when the scope of the investigation actually shifts; otherwise treat as load-bearing reference |
 | [`docs/scope.md`](docs/scope.md) | Boundary spec — what's in, what's out, what's open | When a scope dimension is decided or a new open question surfaces |
 | [`docs/methodology.md`](docs/methodology.md) | Operational pipeline (canonical) | When the actual run procedure changes |
-| [`docs/research-proposal.md`](docs/research-proposal.md) | Heavy doc — full lit review, hypotheses, threats, reproducibility, timeline | Major revision lands a new version tag; minor edits are fine |
+| [`docs/research-proposal.qmd`](docs/research-proposal.qmd) | Heavy doc — full lit review, hypotheses, threats, reproducibility, timeline. Quarto-rendered to PDF/HTML via `bin/render`. | Major revision lands a new version tag; minor edits are fine |
+| [`docs/references.bib`](docs/references.bib) | BibTeX bibliography for `research-proposal.qmd` | When citing a new source in the proposal — add the entry in the same commit |
+| [`docs/_quarto.yml`](docs/_quarto.yml) | Quarto project config (output formats, bibliography path, CSL) | Rarely; only when render configuration changes |
 | [`docs/data-sources.md`](docs/data-sources.md) | Data source decisions | When access mode, license, or provenance changes |
 | [`docs/attribution.md`](docs/attribution.md) | Living credit list | Every time a new dataset, evaluator, model, or rubric is incorporated |
 | [`docs/decisions/0NNN-*.md`](docs/decisions/) | ADRs | New file per decision; never edit accepted ADRs (supersede instead) |
@@ -205,6 +207,7 @@ Pilot runs may happen *before* the freeze and may inform what gets frozen. The f
   Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
   ```
 - Stage files explicitly (`git add path/to/file`), not `git add -A` or `git add .`. Bulk-staging is how `.env` and `.DS_Store` end up in commits.
+- **Citation etiquette.** When citing a new source in `docs/research-proposal.qmd` (any `[@key]` or `@key` reference), add the corresponding BibTeX entry to `docs/references.bib` in the same commit. Never citation-orphan — Quarto will warn but the cost compounds across commits.
 
 ## 14. Open-source posture
 
