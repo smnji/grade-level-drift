@@ -26,7 +26,7 @@ grade-level-drift/
 ├── .env / .env.example / .gitignore / LICENSE.md / README.md / requirements.txt
 ├── docs/
 │   ├── charter.md, scope.md, methodology.md, data-sources.md, attribution.md
-│   ├── research-proposal.md            (in progress — lit review dispatched to a research agent)
+│   ├── research-proposal.md            (full: lit review, hypotheses, methodology, threats, reproducibility, timeline)
 │   ├── decisions/0001-data-source-learning-commons.md
 │   └── research-log/   (this file is the opening entry)
 ├── src/
@@ -51,4 +51,4 @@ Confirmed the LC REST API key works against `GET /standards-frameworks` — 200 
 
 - The format established in this scaffold (charter / scope / methodology / data-sources / attribution / ADRs / research-log / research-proposal) is intended to be reused for future investigations in this series. Generic structure with topic-specific content per repo.
 - The companion project `standards-substrate` (whitepaper-corpus work) provided the documentation conventions adopted here. No data is shared between repos in v0.
-- The research proposal will be the heaviest doc — full literature review, methodology, threats to validity, reproducibility plan. Lit review is in progress (research agent dispatched).
+- The research proposal is the heaviest doc — full literature review, pre-registered hypotheses (H1-H5), methodology, threats to validity, reproducibility plan, ethics, and timeline. Lit review surfaced 28 sources across four themes (text-complexity metrics, LLM-as-judge validity, LLM register/complexity drift, LLMs as educational content generators).

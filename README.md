@@ -34,7 +34,7 @@ python -c "from src.lc_client import LCClient; print(LCClient().list_frameworks(
 
 ## Status
 
-Pre-pilot. Repo initialized 2026-05-04. Charter and scope drafted; research proposal in progress.
+Pre-pilot. Repo initialized 2026-05-04. Charter, scope, methodology, and full research proposal complete. Pilot run pending resolution of the four open decisions in [`docs/scope.md`](docs/scope.md#decisions-still-open).
 
 ## Data and methodology dependencies
 

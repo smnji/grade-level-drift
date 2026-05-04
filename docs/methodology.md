@@ -57,7 +57,7 @@ worked examples or practice problems.
 ```
 
 - `{length_low}, {length_high}` follow the band-tiered length proposal in `scope.md`.
-- No exemplars (zero-shot only) for v0 — adding few-shot is a Q5/Q6 mechanism check, deferred.
+- No exemplars (zero-shot only) for v0 — adding few-shot is a Q4 (mechanism) check, deferred.
 - Standard wording is fed verbatim from the LC API (no normalization).
 
 ## 3. Generation
@@ -77,7 +77,7 @@ Every output is scored by all five LC literacy evaluators:
 | Sentence Structure | SAP-rubric ordinal score (slightly → exceedingly complex) | Decomposes drift into syntactic complexity contribution |
 | Vocabulary | SAP-rubric ordinal score | Decomposes drift into lexical contribution |
 | Conventionality | Quality flag | QC: filters degenerate/off-topic outputs from analysis |
-| Subject Matter Knowledge | Accuracy score | Q8: reading-level vs subject-matter decoupling |
+| Subject Matter Knowledge | Accuracy score | Q6 (decoupling): reading-level vs subject-matter |
 
 - **Backend:** LC's evaluators delegate to OpenAI and Gemini (LLM-as-judge). Both API keys must be set.
 - **Determinism:** evaluators are not deterministic across runs — every score is logged with the evaluator version, the backend model ID, and the timestamp.
@@ -96,7 +96,7 @@ Every output is scored by all five LC literacy evaluators:
 
 - **Per-standard drift:** standards with mean Δ exceeding ±1 grade level are flagged for the "reliably above-grade" analysis (Q3).
 - **Cross-model agreement (when 2nd model added):** intraclass correlation (ICC) and Pearson r of Δ across models.
-- **Mechanism (deferred to follow-up):** mirror the analysis with the standard's own predicted grade level as a covariate (Q4); rerun with prompt variants (Q6).
+- **Mechanism (Q4, deferred to follow-up):** mirror the analysis with the standard's own predicted grade level as a covariate, and rerun with prompt variants.
 
 ### Cuts
 

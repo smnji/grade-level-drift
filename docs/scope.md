@@ -77,7 +77,7 @@ This document fixes the boundaries of the v0 study. Every methodology choice and
 | Sentence Structure | Mechanism: complexity contribution |
 | Vocabulary | Mechanism: word-tier contribution |
 | Conventionality | Quality control — adverse outputs |
-| Subject Matter Knowledge | Q8: decoupling check |
+| Subject Matter Knowledge | Q6 (decoupling) check |
 
 **Rationale.** These evaluators are SAP-rubric-anchored, expert-validated against the CLEAR dataset, and free at the inference cost of OpenAI + Gemini calls. Using all five is cheap insurance against discovering at writeup that we needed an extra channel.
 
