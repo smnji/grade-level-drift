@@ -177,11 +177,10 @@ A **paired between-standards, within-model** design. Each sampled standard at ta
 ## Data and sampling
 
 - **Source.** LC Knowledge Graph (REST API for the pilot; public JSONL snapshot for the published artifact).
-- **Frame.** Records with `statementType = "Standard"` (excluding clusters and domain headings).
-- **Strata.** (Grade band: K-2, 3-5, 6-8, 9-12) × (Subject: ELA, Math) × (Jurisdiction: 3-5 anchor states + Multi-State / CCSS).
-- **Pilot sample (n = 30).** 5 standards per band × ELA/Math mix; jurisdiction balanced opportunistically.
-- **Full study sample (n ≈ 300).** Equal allocation per cell. ~25 per stratum, supports detection of medium effect sizes (Cohen's d ≈ 0.5) at α = 0.05 with > 0.85 power for primary tests.
-- **Random seed.** Pinned and recorded per run; the full sampled `caseIdentifierUUID` list is committed to `data/processed/sample_v{N}.json`.
+- **Frame.** Records with `normalizedStatementType == "Standard"` — the leaf-learning-expectation set in CASE-format frameworks. Includes `statementType` values `Standard`, `Component`, and `Content Standard`; excludes `Standard Grouping` rows (Strands, Domains, Clusters, Conceptual Categories, Grade-Level headers).
+- **Pilot sample (n = 100 per subject; 200 total; drawn 2026-05-04).** Simple random per subject, seed `20260504`, drawn from Multi-State CCSS only (ELA + Math). Eligible population at draw: 1100 ELA + 597 Math. Artifact: [`data/processed/pilot_v1_sample.json`](../data/processed/pilot_v1_sample.json). Purpose: pipeline debugging and prompt/evaluator calibration; explicitly *not* powered for inferential claims.
+- **Full study sample (n ≈ 300; planned).** Strata: (Grade band: K-2, 3-5, 6-8, 9-12) × (Subject: ELA, Math) × (Jurisdiction: 3-5 anchor states + Multi-State / CCSS). Equal allocation per cell. ~25 per stratum, supports detection of medium effect sizes (Cohen's d ≈ 0.5) at α = 0.05 with > 0.85 power for primary tests.
+- **Random seed.** Pinned and recorded per run; the sampled identifier list is committed to `data/processed/sample_v{N}.json` for the full study (pilot equivalent: `data/processed/pilot_v{N}_sample.json`).
 
 ## Generation conditions
 
@@ -222,7 +221,7 @@ Before the full study run begins, the following are frozen and recorded in a tag
 - The five primary analyses listed above with their specific test statistics and α levels.
 - The H1-H4 predictions, in advance of seeing results.
 
-The pilot (n=30) runs *before* this freeze and is allowed to influence the freeze (e.g., adjusting output length, refining prompt). The full study runs after.
+The pilot (n=100 per subject; 200 total; CC-only) runs *before* this freeze and is allowed to influence the freeze (e.g., adjusting output length, refining prompt, deciding HS multi-grade handling, ratifying the population frame). The full study runs after.
 
 # Reproducibility
 
@@ -271,7 +270,7 @@ The threats below are surfaced from the literature review and from our own pre-m
 
 | Phase | Deliverable | Target date |
 |---|---|---|
-| Pilot setup | `lc_client` working end-to-end; pilot sample (n=30) generated and scored; pipeline issues resolved | T+1 week |
+| Pilot setup | `lc_client` working end-to-end; pilot sample (n=100 per subject; 200 total; CC-only) generated and scored; pipeline issues resolved | T+1 week |
 | Pre-registration freeze | Sample frame, prompt, model IDs, evaluator versions, primary analyses, hypotheses — all committed and tagged | T+2 weeks |
 | Full study run | Generation and scoring complete for n ≈ 300 across primary + cross-model conditions | T+3 weeks |
 | Analysis | Notebooks for primary, secondary, and exploratory analyses; per-standard drift profiles; decomposition results | T+4 weeks |

@@ -34,12 +34,22 @@ Every artifact produced at every stage is logged with a `run_id`, the timestamp,
 
 ## 1. Sampling
 
-- **Source:** LC Knowledge Graph REST API for v0 pilot; switch to local JSONL exports before publication freeze for reproducibility.
-- **Frame:** records where `statementType = "Standard"`. Excludes domains, clusters, and cluster headings.
-- **Strata:** (grade band) × (subject) × (jurisdiction). Equal allocation per cell.
-- **Seed:** the random seed and full sampled `caseIdentifierUUID` list are committed under `data/processed/sample_v{N}.json`.
+- **Source:** LC Knowledge Graph REST API for the pilot; switch to local JSONL exports before publication freeze for reproducibility. The cursor-paginated REST call is wrapped in [`src/lc_client.py`](../src/lc_client.py); raw snapshots land in `data/raw/lc/{YYYY-MM-DD}/` with sibling `*.provenance.json` files.
+- **Frame:** records where `normalizedStatementType == "Standard"`. This is the leaf-learning-expectation set in CASE-format frameworks; it includes `statementType` values `Standard`, `Component`, and `Content Standard`, and excludes the organizational `Standard Grouping` rows (Strands, Domains, Clusters, Conceptual Categories, Grade-Level headers).
+- **Pilot sampling (drawn 2026-05-04):**
+  - Jurisdiction: Multi-State Common Core only (ELA framework `c64961be-…`, Math framework `c6496676-…`).
+  - n = 100 per subject (200 total), simple random, seed `20260504`.
+  - Eligible population at draw time: 1100 ELA + 597 Math (filtered universe).
+  - Implementation: `python -m src.snapshot && python -m src.sample`.
+  - Frozen artifact: [`data/processed/pilot_v1_sample.json`](../data/processed/pilot_v1_sample.json). The sample manifest is self-contained — every item carries its identifier, statement code, grade level, description, and source provenance (snapshot path + SHA256).
+- **Full-study sampling (planned, not drawn):**
+  - Strata: (grade band) × (subject) × (jurisdiction). Equal allocation per cell.
+  - Artifact: `data/processed/sample_v{N}.json` (distinct from the pilot file's `pilot_v{N}_sample.json` prefix).
+  - Frozen at the pre-registration tag (`pre-reg-v1`); see [`research-proposal.qmd §6.5`](research-proposal.qmd) and [`preregistration-template.md`](preregistration-template.md).
 
-Why stratified: the central question is whether drift varies *by grade*, so grade band must be balanced. Subject and jurisdiction are added strata to catch interaction effects that an unstratified random sample would underpower.
+Why stratified for the full study: the central question is whether drift varies *by grade*, so grade band must be balanced. Subject and jurisdiction are added strata to catch interaction effects that an unstratified random sample would underpower. The pilot trades stratification for simpler sample administration during pipeline debugging.
+
+**Pilot caveat: HS grade tagging.** CCSS HS Math standards carry `gradeLevel = ["9","10","11","12"]` (no single grade) and CCSS ELA pairs grades (9-10, 11-12) at HS. The pilot sample preserves these multi-grade items as drawn; the per-grade-target handling is a methodology decision deferred to the full-study pass — see scope.md "Decisions still open" #5.
 
 ## 2. Prompt template
 
@@ -111,7 +121,7 @@ Pre-registered cuts above use Holm–Bonferroni correction. Any post-hoc cut is 
 
 For every published study, the following is committed (or released alongside):
 
-- `data/processed/sample_v{N}.json` — sample frame and seed.
+- `data/processed/sample_v{N}.json` — full-study sample frame and seed (pilot equivalent: `data/processed/pilot_v{N}_sample.json`).
 - `data/processed/run_manifest.json` — model IDs, prompt-template SHA, evaluator versions, dataset snapshot date.
 - `data/generated/{run_id}/` — raw LLM outputs (CC BY 4.0).
 - `data/results/{run_id}_scores.parquet` — per-output evaluator scores.

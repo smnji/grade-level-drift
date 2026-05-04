@@ -1,0 +1,2991 @@
+{
+  "sample_id": "pilot_v1",
+  "created_at": "2026-05-04T21:19:13.373563+00:00",
+  "produced_by": "src/sample.py",
+  "seed": 20260504,
+  "n_per_subject": 100,
+  "population_filter": "normalizedStatementType == 'Standard'",
+  "sources": [
+    {
+      "subject": "English Language Arts",
+      "framework_slug": "cc-ela",
+      "framework_name": "Common Core State Standards for ELA",
+      "framework_uuid": "c64961be-d7cb-11e8-824f-0242ac160002",
+      "snapshot_path": "data/raw/lc/2026-05-04/cc-ela-standards.jsonl",
+      "snapshot_sha256": "e32ddf8aac8e73ca2a2c9e29d57fd6e031b61bd6ff146237ae42725b86f83b8e",
+      "snapshot_fetched_at": "2026-05-04T21:18:37.798718+00:00",
+      "framework_total": 1463,
+      "population_size_after_filter": 1100,
+      "drawn": 100
+    },
+    {
+      "subject": "Mathematics",
+      "framework_slug": "cc-math",
+      "framework_name": "Common Core State Standards for Mathematics",
+      "framework_uuid": "c6496676-d7cb-11e8-824f-0242ac160002",
+      "snapshot_path": "data/raw/lc/2026-05-04/cc-math-standards.jsonl",
+      "snapshot_sha256": "9867260c32274e11ab99b5e9d516cffb6ea3b4e43878bea39c41a8c6d3932f0f",
+      "snapshot_fetched_at": "2026-05-04T21:18:38.876102+00:00",
+      "framework_total": 836,
+      "population_size_after_filter": 597,
+      "drawn": 100
+    }
+  ],
+  "items": [
+    {
+      "identifier": "618701a6-3a00-5cb4-b08c-cb33556915bf",
+      "case_uuid": "6b985789-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RF.2.3.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Decode regularly spelled two-syllable words with long vowels.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6052faee-e86f-52d8-a48a-ba1665ec14cc",
+      "case_uuid": "e551cf87-be7b-44fb-b8d5-6ca0a7704408",
+      "statement_code": "WHST.6-8.1.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Establish and maintain a formal style.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6c08b5e6-370b-5e2a-89ca-579d64b4b718",
+      "case_uuid": "6b35aacf-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.K.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6bce0ce4-0be7-5683-b888-88fd05188cae",
+      "case_uuid": "6b976968-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RF.4.4.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Read on-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "a18ad1b1-56d3-5f6e-8fc9-6c6c5ba2cd00",
+      "case_uuid": "6b9a1a35-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.3.1.g",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Form and use comparative and superlative adjectives and adverbs, and choose between them depending on what is to be modified.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ad828706-ddd7-5455-8b55-f4464ec6c247",
+      "case_uuid": "6b98d4a6-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.1.5.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Distinguish shades of meaning among verbs differing in manner (e.g., look, peek, glance, stare, glare, scowl) and adjectives differing in intensity (e.g., large, gigantic) by defining or choosing them or by acting out the meanings.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "abb0e797-9e0b-5a12-8872-75d2b55294ec",
+      "case_uuid": "6b33ca7d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.9-10.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "By the end of grade 9, read and comprehend literary nonfiction in the grades 9—10 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n\nBy the end of grade 10, read and comprehend literary nonfiction at the high end of the grades 9—10 text complexity band independently and proficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "2e333bea-ff52-50f0-a66a-feb62da564ca",
+      "case_uuid": "6b97828b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.6.1.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "a68e49c9-664c-5093-a0d8-b3df2ef3e59e",
+      "case_uuid": "6b384e8a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.1.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Use words and phrases acquired through conversations, reading and being read to, and responding to texts, including using frequently occurring conjunctions to signal simple relationships (e.g., because).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6b88a84c-59b5-56b9-9319-1d98b81f1e01",
+      "case_uuid": "6b3380bb-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.2.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "23833c92-c832-51fd-9acc-9a98d2a5559a",
+      "case_uuid": "6b96b395-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.8.1.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Introduce claim(s), acknowledge and distinguish the claim(s) from alternate or opposing claims, and organize the reasons and evidence logically.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "3d12f8bd-0c62-52ce-b6e3-db558a5f1052",
+      "case_uuid": "6b9941cb-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.5.2.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "e2f39f04-1206-56b8-8c28-03ec0d1000f7",
+      "case_uuid": "6b35c0d1-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RH.9-10.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Cite specific textual evidence to support analysis of primary and secondary sources, attending to such features as the date and origin of the information.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "1a029d9a-d525-5720-8d71-44d100ffbb2f",
+      "case_uuid": "2f25edd7-9bfc-46e6-a9c3-5e85bdd94cbc",
+      "statement_code": "WHST.6-8.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Use technology, including the Internet, to produce and publish writing and present the relationships between information and ideas clearly and efficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "cdebc116-dab8-5887-a812-68067a8b8fea",
+      "case_uuid": "6b9901d9-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.K.2.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Spell simple words phonetically, drawing on knowledge of sound-letter relationships.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "5c02320d-e888-596a-8ec5-ed023eba5352",
+      "case_uuid": "6b966802-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.6.1.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ef0b88b4-67d2-5f2d-a802-0450f337c2c8",
+      "case_uuid": "6b393b2b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.7.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "7ecbcdcd-6dec-5788-bc30-36b0e9ae4f5b",
+      "case_uuid": "6b378590-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.3.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "With guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, and editing.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "091eed7a-b7f2-5edf-a3fa-b706e6c34840",
+      "case_uuid": "6b351ca1-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.5.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Conduct short research projects that use several sources to build knowledge through investigation of different aspects of a topic.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6737dd11-2ce8-55eb-baad-9940c7ad92bd",
+      "case_uuid": "6b396e33-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RF.1.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Know and apply grade-level phonics and word analysis skills in decoding words.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "8eb13aa1-cb6a-5bf0-b197-1c25d81d51ef",
+      "case_uuid": "569d2b58-c4b0-43b8-9daa-2b8eb56a2b6c",
+      "statement_code": "WHST.6-8.1.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Introduce claim(s) about a topic or issue, acknowledge and distinguish the claim(s) from alternate or opposing claims, and organize the reasons and evidence logically.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "1ddf05f3-1c2b-5116-bd35-b50be993eb83",
+      "case_uuid": "6b38dfc8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RL.K.9",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "With prompting and support, compare and contrast the adventures and experiences of characters in familiar stories.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "b7eb3370-4428-5dd5-9b05-003fce05b8a0",
+      "case_uuid": "6b9954d8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.8.2.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "5edf2fdc-2995-595b-a042-052e02ba168a",
+      "case_uuid": "6b987c91-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.7.1.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Pose questions that elicit elaboration and respond to others' questions and comments with relevant observations and ideas that bring the discussion back on topic as needed.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "4e75846b-af44-582a-bb2b-a2b959fc6ca4",
+      "case_uuid": "6b394f76-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "WHST.11-12.9",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Draw evidence from informational texts to support analysis, reflection, and research.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6bc752fa-2df4-558a-9a58-0ec23c8b9637",
+      "case_uuid": "6b3442bf-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RL.9-10.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "b974f39f-d418-50d9-9923-94c1e78d780d",
+      "case_uuid": "6b337365-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.11-12.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "06033a13-4dfa-5bae-9566-d02ebd5a9b43",
+      "case_uuid": "6b9984af-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.2.4.e",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Use glossaries and beginning dictionaries, both print and digital, to determine or clarify the meaning of words and phrases.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "e7205b08-5fca-52cb-a902-a49d86608819",
+      "case_uuid": "6b366de3-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.3.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Demonstrate understanding of word relationships and nuances in word meanings.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "d9ca425c-e5e5-503a-aa8e-d3144caa979b",
+      "case_uuid": "6b99c145-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.8.2.e",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Establish and maintain a formal style.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "d7e37e36-7911-5ec2-ba6c-2ecb16817c35",
+      "case_uuid": "6b98f6a8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.7.4.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "99640613-a288-5038-8ec4-c5061518d08f",
+      "case_uuid": "6b39181a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.11-12.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Use technology, including the Internet, to produce, publish, and update individual or shared writing products in response to ongoing feedback, including new arguments or information.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "abe7c150-79b1-5a77-8231-5cc92a967f82",
+      "case_uuid": "ccdef02b-a525-490a-b632-785a0e2d4fd7",
+      "statement_code": "WHST.6-8.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Conduct short research projects to answer a question (including a self-generated question), drawing on several sources and generating additional related, focused questions that allow for multiple avenues of exploration.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "8c6db37c-6bda-51cb-98e9-69447cb97161",
+      "case_uuid": "fb52db1b-15c1-4163-be05-ede7de04cdeb",
+      "statement_code": "WHST.6-8.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6ee91d4d-bfb0-54ac-b587-c99030ff2dd9",
+      "case_uuid": "6b388a9c-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.2.9",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Compare and contrast the most important points presented by two texts on the same topic.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ccc9f5c1-0c78-50ab-8dde-e9dc75daa608",
+      "case_uuid": "6b378b3b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.4.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6399c4be-4a7d-57ec-bb38-faf6195bd480",
+      "case_uuid": "6b36ab96-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.1.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Know and use various text features (e.g., headings, tables of contents, glossaries, electronic menus, icons) to locate key facts or information in a text.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6c3acc37-7a1d-5276-ab80-46faa9209215",
+      "case_uuid": "6b38b9af-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RL.2.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Describe how characters in a story respond to major events and challenges.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6a37aa6a-4fde-5ed0-94d6-cb9e6e72ed89",
+      "case_uuid": "5b061384-cf5d-4cd9-9e9f-12920ac5e5ce",
+      "statement_code": "RST.6-8.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Analyze the author's purpose in providing an explanation, describing a procedure, or discussing an experiment in a text.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "fbd52e73-c3a0-5693-991a-22d0fc934e46",
+      "case_uuid": "6b389c61-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.6.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "56c2bcf0-c2f6-58dc-8169-60dc120c9dff",
+      "case_uuid": "6b98d001-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.1.1.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Use personal, possessive, and indefinite pronouns (e.g., I, me, my; they, them, their; anyone, everything).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ad479cc3-5fbc-5007-806a-82fc8588d615",
+      "case_uuid": "6b3552f2-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.9-10.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "2019c8d1-3049-56a8-a3f2-a668105682db",
+      "case_uuid": "6b963505-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RF.1.4.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Read on-level text with purpose and understanding.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "35684cef-7739-5906-af7b-e20f8919c8c6",
+      "case_uuid": "6b35654a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "WHST.11-12.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Write routinely over extended time frames (time for reflection and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "15e9818c-56c1-5705-bd69-e53d791f6df7",
+      "case_uuid": "6b99c648-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.9-10.1.e",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Provide a concluding statement or section that follows from and supports the argument presented.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "b6299bf0-5901-5d35-b768-c3f5bfc9a5a8",
+      "case_uuid": "6b3880a9-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.1.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "fdc93b75-83b3-5aad-9c61-c262381dccca",
+      "case_uuid": "6b33bf7b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.8.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "By the end of the year, read and comprehend literary nonfiction at the high end of the grades 6—8 text complexity band independently and proficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "b36a38d1-ded9-5d41-b673-4549f8da487b",
+      "case_uuid": "a74913f8-c8e6-4c8f-ba9c-c84a7e27bb7a",
+      "statement_code": "RH.6-8.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Identify aspects of a text that reveal an author's point of view or purpose (e.g., loaded language, inclusion or avoidance of particular facts).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "5f273663-050a-5ba1-a634-d3f8ccb67ea0",
+      "case_uuid": "6b34a301-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.3.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Report on a topic or text, tell a story, or recount an experience with appropriate facts and relevant, descriptive details, speaking clearly at an understandable pace.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ac7201a3-d6f9-509c-abb2-c2eb04f90528",
+      "case_uuid": "6b966546-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.5.1.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation and other information known about the topic to explore ideas under discussion.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "c09f3063-7615-5e86-8f3c-9f70e701bd6c",
+      "case_uuid": "6b987587-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.4.1.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Pose and respond to specific questions to clarify or follow up on information, and make comments that contribute to the discussion and link to the remarks of others.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "e7d5dc10-ebfd-5211-8e32-30b63accb976",
+      "case_uuid": "6b394d38-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "WHST.11-12.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Use technology, including the Internet, to produce, publish, and update individual or shared writing products in response to ongoing feedback, including new arguments or information.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "6d22efaa-dc25-5441-a8e1-07c72a089c0a",
+      "case_uuid": "9aa27d88-ff06-40f6-8c31-f0d86890ac1a",
+      "statement_code": "RH.6-8.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Integrate visual information (e.g., in charts, graphs, photographs, videos, or maps) with other information in print and digital texts.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "3f4c00b2-d35a-5242-b541-318d5ec6e41c",
+      "case_uuid": "6b977dfc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.4.1.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Follow agreed-upon rules for discussions and carry out assigned roles.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "5030eadf-b59c-5042-ad7a-3b96ffa24dd2",
+      "case_uuid": "85b92850-44eb-480e-b6f6-3925db44f746",
+      "statement_code": "WHST.6-8.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach, focusing on how well purpose and audience have been addressed.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "2f14f88f-9f7f-5067-be36-45943d76ae96",
+      "case_uuid": "6b988a4c-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.3.1.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Use linking words and phrases (e.g., because, therefore, since, for example) to connect opinion and reasons.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "0c608a56-91d2-5f52-a517-a76ddfc0ecd9",
+      "case_uuid": "6b386a0b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RH.11-12.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Determine the central ideas or information of a primary or secondary source; provide an accurate summary that makes clear the relationships among the key details and ideas.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "98c88846-10ff-53de-a6d2-8afdf3a0a329",
+      "case_uuid": "6b373855-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.1.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Ask and answer questions about key details in a text read aloud or information presented orally or through other media.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "f21a3f9f-5bd8-5cef-a68c-2cce427c3005",
+      "case_uuid": "1f0a0b5c-be1d-47ba-94df-ad4c9a51ec3b",
+      "statement_code": "WHST.6-8.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Write informative/explanatory texts, including the narration of historical events, scientific procedures/experiments, or technical processes.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "979cb69e-777b-53a5-91e9-1934fad4ce75",
+      "case_uuid": "6b37a2ad-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.6.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "95825e4d-0ee4-53cd-afa7-1f2385eaca88",
+      "case_uuid": "6b36985b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RH.11-12.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Evaluate an author's premises, claims, and evidence by corroborating or challenging them with other information.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "556332d7-a875-5848-bb1b-fdff79c77182",
+      "case_uuid": "6b32f3b8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.11-12.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Apply knowledge of language to understand how language functions in different contexts, to make effective choices for meaning or style, and to comprehend more fully when reading or listening.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "9271b70f-8a8d-54a7-99ff-98606b8c9fa5",
+      "case_uuid": "e2e11e60-5889-4eb3-976a-8fffee20443b",
+      "statement_code": "RH.6-8.9",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Analyze the relationship between a primary and secondary source on the same topic.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "1cd41906-3c95-5857-bd37-37481e80f9f7",
+      "case_uuid": "6b98e09e-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.3.1.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Form and use regular and irregular verbs.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "e20462df-5dd8-52f7-8e4b-a479ea559e8d",
+      "case_uuid": "ac72c5fd-0577-4621-8d91-b35aa7b4d028",
+      "statement_code": "WHST.6-8.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Write routinely over extended time frames (time for reflection and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "b9b91074-7bca-5e0c-990c-6c4cbc417284",
+      "case_uuid": "6b9678c8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.11-12.2.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "Introduce a topic; organize complex ideas, concepts, and information so that each new element builds on that which precedes it to create a unified whole; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "0e40a387-4af7-5584-a3ee-4116b5d3b93a",
+      "case_uuid": "6b94fd42-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.4.3.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Choose words and phrases to convey ideas precisely.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "4f89e553-c052-58d1-95c2-65e0146522ad",
+      "case_uuid": "6b94b10d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.2.2.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Capitalize holidays, product names, and geographic names.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "560f829c-6260-5e50-a599-7c23bb69fb11",
+      "case_uuid": "6b348233-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RST.9-10.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "By the end of grade 10, read and comprehend science/technical texts in the grades 9—10 text complexity band independently and proficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "1a641689-cd86-5c3f-ae33-8dc55b62358a",
+      "case_uuid": "6b38d7b1-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RL.9-10.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Analyze how complex characters (e.g., those with multiple or conflicting motivations) develop over the course of a text, interact with other characters, and advance the plot or develop the theme.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "9c18eddf-5c92-50d2-a760-1fcabd7daca8",
+      "case_uuid": "6b9a02b7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.6.2.f",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Provide a concluding statement or section that follows from the information or explanation presented.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "0dc7955f-f1a3-521b-8a6b-8c6299a0379a",
+      "case_uuid": "94a6d7d1-5abd-472e-b8b9-a15c2db644d3",
+      "statement_code": "RST.6-8.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Cite specific textual evidence to support analysis of science and technical texts.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "559d8e67-5327-5a3b-b78f-b515997918fb",
+      "case_uuid": "6b38f800-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.3.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Ask and answer questions about information from a speaker, offering appropriate elaboration and detail.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "b6fd8590-df68-57e9-9064-afbe74cd0385",
+      "case_uuid": "6b372064-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RL.K.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "With prompting and support, retell familiar stories, including key details.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "a2a1d032-6631-57b8-9c4f-e99bdf63692d",
+      "case_uuid": "6b9840ba-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.8.5.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., bullheaded, willful, firm, persistent, resolute).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "1b81f3e8-e5e2-5f2f-98b6-02b666396155",
+      "case_uuid": "6b359fdb-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "CCRA.R.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Read closely to determine what the text says explicitly and to make logical inferences from it; cite specific textual evidence when writing or speaking to support conclusions drawn from the text.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ad398cf4-d1da-5a98-84eb-4d988bb17b55",
+      "case_uuid": "6b99aacc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.4.3.e",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Provide a conclusion that follows from the narrated experiences or events.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "2b994426-1880-54d3-870b-9ab3e862777c",
+      "case_uuid": "6b36d755-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RI.7.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Analyze the structure an author uses to organize a text, including how the major sections contribute to the whole and to the development of the ideas.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "faec9529-5cc8-5c0b-81be-a37a69878229",
+      "case_uuid": "6b345a79-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RST.11-12.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "11",
+        "12"
+      ],
+      "description": "By the end of grade 12, read and comprehend science/technical texts in the grades 11—CCR text complexity band independently and proficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "c51c03e2-584c-58aa-b0b9-9c839532399c",
+      "case_uuid": "6b994db3-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.7.2.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "7cf6a713-d4ca-53a5-96b2-b23b12cec3f5",
+      "case_uuid": "6b39fb7d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "CCRA.SL.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Present information, findings, and supporting evidence such that listeners can follow the line of reasoning and the organization, development, and style are appropriate to task, purpose, and audience.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "8b6059c8-c871-5700-a31a-64c02f8e63e9",
+      "case_uuid": "6b99a85a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.4.2.e",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Provide a concluding statement or section related to the information or explanation presented",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "86b8d031-111f-55ff-883d-11ccd249fc09",
+      "case_uuid": "6b983b50-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.8.2.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Spell correctly.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "ca513843-711b-59ab-8cb0-c39ba79de664",
+      "case_uuid": "6b985a8b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RF.2.4.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "a6dc4621-33fb-5134-afbf-2fbfd56f4b6f",
+      "case_uuid": "6b99fd82-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RF.2.3.f",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Recognize and read grade-appropriate irregularly spelled words.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "3b2a18f6-d0ef-512c-a65c-c43183fc419b",
+      "case_uuid": "6b982057-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.5.5.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "3823526e-6580-5ca2-a509-89553d119d40",
+      "case_uuid": "6b9835dd-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.7.5.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., refined, respectful, polite, diplomatic, condescending).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "4c80182a-53f2-59ed-bf70-8866a0f41628",
+      "case_uuid": "6b368472-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.7.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "48371ac6-c612-5fe3-adef-bed946a86f24",
+      "case_uuid": "6b37a9b7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.7.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "44b16b19-d1b3-503f-a1b3-f5d8f749c8fa",
+      "case_uuid": "6b3445a9-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RL.9-10.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "By the end of grade 9, read and comprehend literature, including stories, dramas, and poems, in the grades 9—10 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n\nBy the end of grade 10, read and comprehend literature, including stories, dramas, and poems, at the high end of the grades 9—10 text complexity band independently and proficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "4f17684d-8dfa-59d9-af75-2ff1d5f62394",
+      "case_uuid": "6b9812be-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.4.4.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "23ccb14e-6420-5bfd-87c4-5ad38b11dcb0",
+      "case_uuid": "6b95b8fc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.9-10.3.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Write and edit work so that it conforms to the guidelines in a style manual (e.g., MLA Handbook, Turabian's Manual for Writers) appropriate for the discipline and writing type.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "e0dfc433-22f0-56ea-93b0-2b5cdbf43458",
+      "case_uuid": "6b99b9cf-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "W.7.2.e",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Establish and maintain a formal style.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "08334116-6607-5cde-ba75-1d95b7f36408",
+      "case_uuid": "6b38ee52-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.1.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Ask and answer questions about what a speaker says in order to gather additional information or clarify something that is not understood.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "eec20ab8-7186-5799-a814-21b3666d23da",
+      "case_uuid": "6b992789-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.9-10.1.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Respond thoughtfully to diverse perspectives, summarize points of agreement and disagreement, and, when warranted, qualify or justify their own views and understanding and make new connections in light of the evidence and reasoning presented.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "671edf35-110f-5fad-8612-2a09455a0fa9",
+      "case_uuid": "6b336266-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "RH.9-10.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "By the end of grade 10, read and comprehend history/social studies texts in the grades 9—10 text complexity band independently and proficiently.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "33779075-6d1a-54e5-8a33-619fa64f5abc",
+      "case_uuid": "df9a6415-b8df-45bd-b87b-7414829de568",
+      "statement_code": "RH.6-8.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Determine the central ideas or information of a primary or secondary source; provide an accurate summary of the source distinct from prior knowledge or opinions.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "a70ce27a-cc0a-5189-bb95-955185f87825",
+      "case_uuid": "6b37eed1-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "L.1.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "a166a8ef-3c08-5b22-93d7-53b7fe6dd156",
+      "case_uuid": "6b967061-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.9-10.1.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Come to discussions prepared, having read and researched material under study; explicitly draw on that preparation by referring to evidence from texts and other research on the topic or issue to stimulate a thoughtful, well-reasoned exchange of ideas.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "4b0ced27-314f-5aba-aec3-cb2919abbcbf",
+      "case_uuid": "6b3763c8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "SL.9-10.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10"
+      ],
+      "description": "Make strategic use of digital media (e.g., textual, graphical, audio, visual, and interactive elements) in presentations to enhance understanding of findings, reasoning, and evidence and to add interest.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "English Language Arts",
+      "subject_label": "English Language Arts"
+    },
+    {
+      "identifier": "e946b36d-784a-5254-bcc1-14cd0f8c2877",
+      "case_uuid": "6ba0b82c-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSA-REI.C.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Represent a system of linear equations as a single matrix equation in a vector variable.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "edc37a90-fbc4-5141-a96c-743419e57327",
+      "case_uuid": "6ba1caa3-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "8.EE.C.8.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Solve systems of two linear equations in two variables algebraically, and estimate solutions by graphing the equations. Solve simple cases by inspection. *For example, 3x + 2y = 5 and 3x + 2y = 6 have no solution because 3x + 2y cannot simultaneously be 5 and 6.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "c41aafda-f8ce-589f-87de-d172c97b4667",
+      "case_uuid": "6ba20ee1-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.MD.C.5.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Recognize volume as additive. Find volumes of solid figures composed of two non-overlapping right rectangular prisms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1025752b-3ab5-58a7-8e7b-005db228b2cb",
+      "case_uuid": "6ba1f961-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-MD.B.5.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Evaluate and compare strategies on the basis of expected values. *For example, compare a high-deductible versus a low-deductible automobile insurance policy using various, but reasonable, chances of having a minor or a major accident.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "7fb27036-f1e3-5214-b65d-2333e20186be",
+      "case_uuid": "6b9e233f-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "3.OA.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Use multiplication and division within 100 to solve word problems in situations involving equal groups, arrays, and measurement quantities, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "8d03e081-fa8a-554a-ab0f-ce2b978d9da4",
+      "case_uuid": "6ba1c7ad-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "8.EE.C.7.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Solve linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "6a60d67c-6a78-5666-be2a-2891dcf93cc5",
+      "case_uuid": "6b9d9496-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSA-SSE.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Use the structure of an expression to identify ways to rewrite it. *For example, see $x_{4} — y_{4}$ as $(x^{2})^{2} — (y^{2})^{2}$, thus recognizing it as a difference of squares that can be factored as $(x^{2} — y^{2})(x^{2} + y^{2})$.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "c14e392d-1c27-5aca-9bef-259a8403dd60",
+      "case_uuid": "6b9bd535-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "1.G.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Distinguish between defining attributes (e.g., triangles are closed and three-sided) versus non-defining attributes (e.g., color, orientation, overall size); build and draw shapes to possess defining attributes.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "3d45bc79-6517-51e1-aef8-435cedc7bd42",
+      "case_uuid": "8fed1d2f-2a46-4cb2-8b40-57bb732e5a33",
+      "statement_code": "8.MP1",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Make sense of problems and persevere in solving them.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "743db505-fe65-55ff-bac5-574e41555291",
+      "case_uuid": "6b9d51bd-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.OA.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "e3be432f-8aac-572e-9ca9-43ccfe16b849",
+      "case_uuid": "635a6a3c-f8c7-4083-95dd-91359393257f",
+      "statement_code": "1.MP8",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Look for and express regularity in repeated reasoning.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "a1d441d7-d499-5654-a7bd-8ef360893cde",
+      "case_uuid": "6ba1b8b8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.NS.A.1.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Understand p + q as the number located a distance |q| from p, in the positive or negative direction depending on whether q is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "f305010a-cdfe-57e6-adf0-7eff49eb921c",
+      "case_uuid": "6b9e32dc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.MD.C.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Recognize volume as an attribute of solid figures and understand concepts of volume measurement.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "87268aaa-5736-57a4-90eb-c010874c1ff8",
+      "case_uuid": "679c68f6-5dad-4cfd-b5ae-8b316309fb7f",
+      "statement_code": "3.MP2",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Reason abstractly and quantitatively.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "9a33a0d8-ffe5-5ee2-bc5d-0a78f9416189",
+      "case_uuid": "6ba04da6-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.NF.C.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Compare two decimals to hundredths by reasoning about their size. Recognize that comparisons are valid only when the two decimals refer to the same whole. Record the results of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual model.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "29afabcd-7158-5e9a-b98f-9bfc2d045654",
+      "case_uuid": "6ba08ab7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-MD.B.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Analyze decisions and strategies using probability concepts (e.g., product testing, medical testing, pulling a hockey goalie at the end of a game).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "c249e44e-ace7-51a0-80a6-2a62cb776232",
+      "case_uuid": "6ba0c91e-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSN-CN.C.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Extend polynomial identities to the complex numbers. *For example, rewrite $x^{2} + 4$ as $(x + 2i)(x - 2i)$.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "5ee2cead-ed7d-5d00-b4b1-0dd1b0fce583",
+      "case_uuid": "6b9f0f18-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-C.A.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Construct a tangent line from a point outside a given circle to the circle.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "32c803c1-1bd8-5a52-b572-b9ba60eeabc1",
+      "case_uuid": "6ba27a0c-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSF-IF.C.7.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Graph rational functions, identifying zeros and asymptotes when suitable factorizations are available, and showing end behavior.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "82fdfb13-e8ad-5a79-b745-978b9102003d",
+      "case_uuid": "6ba22af7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.RP.A.2.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Represent proportional relationships by equations. *For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as t = pn.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "a6b910c8-ac87-51b3-af40-a6372cb1e970",
+      "case_uuid": "6b9d6553-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.G.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes of the appropriate unit fraction edge lengths, and show that the volume is the same as would be found by multiplying the edge lengths of the prism. Apply the formulas $V = l w h$ and $V = b h$ to find volumes of right rectangular prisms with fractional edge lengths in the context of solving real-world and mathematical problems.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "761bc2ba-93b5-5de4-9ec5-0c98fac26303",
+      "case_uuid": "6ba1a0ce-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.NF.B.5.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "*Interpret multiplication as scaling (resizing), by* explaining why multiplying a given number by a fraction greater than 1 results in a product greater than the given number (recognizing multiplication by whole numbers greater than 1 as a familiar case); explaining why multiplying a given number by a fraction less than 1 results in a product smaller than the given number; and relating the principle of fraction equivalence $\\frac{a}{b} = \\frac{(n \\times a)}{(n \\times b)}$ to the effect of multiplying $\\frac{a}{b}$ by 1.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "037c62c6-5448-5a6c-a550-e84e7b42f062",
+      "case_uuid": "6b9e34fb-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.NBT.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Read, write, and compare decimals to thousandths.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "0eb3e5dd-ea32-5ff9-9b5c-9806c54bbbdc",
+      "case_uuid": "6b9dd100-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "K.OA.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "fca94116-321f-599b-8b92-1cdef8844d4d",
+      "case_uuid": "6ba053e8-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.NF.B.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "fd5b678f-1525-5a23-9ece-8a9350f193e0",
+      "case_uuid": "6b9edfbc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.G.A.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Represent three-dimensional figures using nets made up of rectangles and triangles, and use the nets to find the surface area of these figures. Apply these techniques in the context of solving real-world and mathematical problems.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "9e07be8c-467c-54fe-8589-a689473bbd98",
+      "case_uuid": "6b9e2e91-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.OA.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Solve multistep word problems posed with whole numbers and having whole-number answers using the four operations, including problems in which remainders must be interpreted. Represent these problems using equations with a letter standing for the unknown quantity. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "67d0c77a-4e09-5cc4-bb0d-033e952ab1ed",
+      "case_uuid": "6ba1b5b2-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.EE.B.4.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Solve word problems leading to inequalities of the form px + q > r or px + q < r, where p, q, and r are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. *For example: As a salesperson, you are paid $50 per week plus $3 per sale. This week you want your pay to be at least $100. Write an inequality for the number of sales you need to make, and describe the solutions.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "3fdd3725-5734-5720-9b60-5dfd0d8b40da",
+      "case_uuid": "6b9f94e7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSF-IF.B.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Relate the domain of a function to its graph and, where applicable, to the quantitative relationship it describes. *For example, if the function h(n) gives the number of person-hours it takes to assemble n engines in a factory, then the positive integers would be an appropriate domain for the function.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "509f29a8-bcde-5df1-ae1c-3a94077c70d3",
+      "case_uuid": "b3ff2e2a-9bfe-44c3-b58d-ea335b92a5de",
+      "statement_code": "4.MP7",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Look for and make use of structure.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "4b88f541-86f8-53c9-9f17-156b1ad9c754",
+      "case_uuid": "6b9f1e55-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSN-VM.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Add and subtract vectors.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "3f55d232-bf86-54b0-8188-424990f7f7c7",
+      "case_uuid": "6b9e70eb-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-GMD.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "95905cea-ddae-5b9a-9c75-fbd963519f31",
+      "case_uuid": "6b9fb424-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-IC.B.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Use data from a randomized experiment to compare two treatments; use simulations to decide if differences between parameters are significant.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "40aca54b-a4dd-55fd-9a92-0896a322d1ca",
+      "case_uuid": "6b9f140d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-GMD.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Identify the shapes of two-dimensional cross-sections of three-dimensional objects, and identify three-dimensional objects generated by rotations of two-dimensional objects.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "7b7b5a54-3ded-50ae-bb6d-403b56c3d378",
+      "case_uuid": "6ba0a525-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "3.OA.D.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Solve two-step word problems using the four operations. Represent these problems using equations with a letter standing for the unknown quantity. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1e097c63-b820-53c3-85ef-03d9da9e0944",
+      "case_uuid": "6b9c70b3-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-GMD.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Give an informal argument for the formulas for the circumference of a circle, area of a circle, volume of a cylinder, pyramid, and cone.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "8f8903ec-f732-5565-99e3-8ef53251483c",
+      "case_uuid": "6ba2416d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSF-IF.C.7.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Graph polynomial functions, identifying zeros when suitable factorizations are available, and showing end behavior.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "f0a7f55a-ef4e-5666-b8fa-a14e73f39749",
+      "case_uuid": "6ba08433-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-CP.B.7",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Apply the Addition Rule, P(A or B) = P(A) + P(B) - P(A and B), and interpret the answer in terms of the model.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "c2de3eda-fcb5-5b4e-9bba-785a06e4201d",
+      "case_uuid": "6b9dc5cd-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-MD.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Calculate the expected value of a random variable; interpret it as the mean of the probability distribution.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "d032100d-1fb4-5b84-be62-4324e9fbfff0",
+      "case_uuid": "6ba00873-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSA-REI.C.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Solve systems of linear equations exactly and approximately (e.g., with graphs), focusing on pairs of linear equations in two variables.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "63ca683b-e4d5-5b0f-a0d3-5904a36904f9",
+      "case_uuid": "6b9c02b9-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.MD.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Know relative sizes of measurement units within one system of units including km, m, cm; kg, g; lb, oz.; l, ml; hr, min, sec. Within a single system of measurement, express measurements in a larger unit in terms of a smaller unit. Record measurement equivalents in a two column table. *For example, know that 1 ft is 12 times as long as 1 in. Express the length of a 4 ft snake as 48 in. Generate a conversion table for feet and inches listing the number pairs (1, 12), (2, 24), (3, 36), …*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "06f8082b-deb3-5d13-b982-7c012aefc966",
+      "case_uuid": "6b9ecb67-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.NBT.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Fluently add and subtract multi-digit whole numbers using the standard algorithm.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1ee6b0a0-737e-55ad-b7e1-a95ce78d21c9",
+      "case_uuid": "6b9c0660-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.NBT.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right. *For example, recognize that 700 ÷ 70 = 10 by applying concepts of place value and division.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1fe18441-a28a-546f-a068-c74fd0d1ed50",
+      "case_uuid": "6b9e89fc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-MD.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Develop a probability distribution for a random variable defined for a sample space in which theoretical probabilities can be calculated; find the expected value. *For example, find the theoretical probability distribution for the number of correct answers obtained by guessing on all five questions of a multiple-choice test where each question has four choices, and find the expected grade under various grading schemes.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "320ad651-b25b-5793-a54d-821cdc3bb816",
+      "case_uuid": "6b9f0232-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSA-SSE.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Derive the formula for the sum of a finite geometric series (when the common ratio is not 1), and use the formula to solve problems. *For example, calculate mortgage payments.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "510554c8-f0c5-5ffa-8109-c58bd4abccdf",
+      "case_uuid": "6b9e87c7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-ID.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Interpret differences in shape, center, and spread in the context of the data sets, accounting for possible effects of extreme data points (outliers).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "3a43a01b-e669-5a5f-b750-631c94388579",
+      "case_uuid": "6b9fdad9-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "2.NBT.B.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Add up to four two-digit numbers using strategies based on place value and properties of operations.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "cf5df918-2d02-5743-9c38-1476d52f11f6",
+      "case_uuid": "6ba26d02-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.NS.A.1.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Apply properties of operations as strategies to add and subtract rational numbers.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "13602b07-ab55-571e-8540-d1049ab0a9ed",
+      "case_uuid": "6b9d73cd-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.G.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Draw (freehand, with ruler and protractor, and with technology) geometric shapes with given conditions. Focus on constructing triangles from three measures of angles or sides, noticing when the conditions determine a unique triangle, more than one triangle, or no triangle.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "a38faffa-9c52-51b3-b934-6eb61a78d3d5",
+      "case_uuid": "6ba21506-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.EE.A.2.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). *For example, use the formulas $V = s^{3}$ and $A = 6 s^2$ to find the volume and surface area of a cube with sides of length $s = \\frac{1}{2}$.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "6f1fd016-4465-54f6-a14f-f87c31487e78",
+      "case_uuid": "6b9f119a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-CO.A.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Develop definitions of rotations, reflections, and translations in terms of angles, circles, perpendicular lines, parallel lines, and line segments.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "7d15e8c3-103a-5013-a24c-0464999d69a0",
+      "case_uuid": "6b9fed0a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.NBT.B.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "b79a0972-85b1-5f54-99e4-55f5aae2ebc4",
+      "case_uuid": "6b9d769c-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.NS.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "5407f284-4756-58fb-8a7f-67eb13f40eee",
+      "case_uuid": "6b9c3a21-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.RP.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Compute unit rates associated with ratios of fractions, including ratios of lengths, areas and other quantities measured in like or different units. *For example, if a person walks $\\frac{1}{2}$ mile in each $\\frac{1}{4}$ hour, compute the unit rate as the complex fraction $\\frac{\\frac{1}{2}}{\\frac{1}{4}}$  miles per hour, equivalently 2 miles per hour.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "44193d7a-42a0-5bde-ae59-16c14eb6229e",
+      "case_uuid": "6b9f2c57-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "K.CC.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Understand the relationship between numbers and quantities; connect counting to cardinality.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "e9681cce-5443-5d36-a279-836660785a84",
+      "case_uuid": "6ba2181f-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.NS.C.6.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Find and position integers and other rational numbers on a horizontal or vertical number line diagram; find and position pairs of integers and other rational numbers on a coordinate plane.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "45845725-c424-5979-935e-799020ffdbdb",
+      "case_uuid": "6ba14b22-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "8.EE.C.8.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Understand that solutions to a system of two linear equations in two variables correspond to points of intersection of their graphs, because points of intersection satisfy both equations simultaneously.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "aa46c8cc-c291-5b4f-bca4-0ea7ccc99628",
+      "case_uuid": "600207bf-3404-4d79-9400-b9cce5b699c7",
+      "statement_code": "4.MP1",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Make sense of problems and persevere in solving them.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1e7b8f46-92a9-5817-ba90-cf67a66bc81a",
+      "case_uuid": "6b9be543-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "2.MD.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Measure the length of an object by selecting and using appropriate tools such as rulers, yardsticks, meter sticks, and measuring tapes.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "dc7b9495-8837-5eae-a0b0-04be0fab3079",
+      "case_uuid": "6b9e41ee-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.RP.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "52d28254-51e9-53c6-8ac1-9b3e218852ed",
+      "case_uuid": "6ba1f64b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-ID.B.6.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Informally assess the fit of a function by plotting and analyzing residuals.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "aaa67467-b679-59a8-bbeb-6706232a0715",
+      "case_uuid": "6ba1a3cc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "5.NF.B.7.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "5"
+      ],
+      "description": "Interpret division of a whole number by a unit fraction, and compute such quotients. *For example, create a story context for $4 \\div (\\frac{1}{5})$, and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that $4 \\div (\\frac{1}{5}) = 20$ because $20 × (\\frac{1}{5}) = 4$.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "75fdd8dd-aed6-5c29-a9a3-79f931198306",
+      "case_uuid": "a22476fc-cc30-46c2-a7d5-74aac75ef60b",
+      "statement_code": "1.MP7",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "1"
+      ],
+      "description": "Look for and make use of structure.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1278683e-82dc-5f9f-8ed9-19ef9f1a8846",
+      "case_uuid": "6b9c6a73-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-C.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Prove that all circles are similar.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "67cd3860-efae-5a91-826a-a8ab3bbc5970",
+      "case_uuid": "d750e9b5-5498-468e-b8ad-a387d86c8965",
+      "statement_code": "4.MP5",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Use appropriate tools strategically.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "549d72b8-68e2-527f-a3fa-c8fb033fe4a2",
+      "case_uuid": "6b9c4078-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "8.EE.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Know and apply the properties of integer exponents to generate equivalent numerical expressions. *For example, $3^{2} \\times 3^{-5} = 3^{-3} = {{\\frac{1}{3}}^3} = {\\frac{1}{27}}$.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "1e3e8778-a603-5dab-857e-9dccb966926f",
+      "case_uuid": "6b9ec90c-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.MD.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Make a line plot to display a data set of measurements in fractions of a unit ($\\frac{1}{2}$, $\\frac{1}{4}$, $\\frac{1}{8}$). Solve problems involving addition and subtraction of fractions by using information presented in line plots. *For example, from a line plot find and interpret the difference in length between the longest and shortest specimens in an insect collection.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "7a305b19-df0f-54de-90c0-b6af56fbd293",
+      "case_uuid": "6ba1286a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.EE.A.2.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Write expressions that record operations with numbers and with letters standing for numbers. *For example, express the calculation \"Subtract y from 5\" as 5 - y.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "ec423f7c-3e67-5b0c-9f72-c5fd236b2b61",
+      "case_uuid": "6b9fc478-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "K.OA.A.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Fluently add and subtract within 5.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "f7cc5a71-2d54-5197-9757-3b99d3b468a9",
+      "case_uuid": "6b9d8c97-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSA-APR.B.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Know and apply the Remainder Theorem: For a polynomial p(x) and a number a, the remainder on division by x - a is p(a), so p(a) = 0 if and only if (x - a) is a factor of p(x).",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "20146310-050c-5f6b-9f95-2f676916f1fd",
+      "case_uuid": "6ba0213a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-CP.B.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Find the conditional probability of A given B as the fraction of B's outcomes that also belong to A, and interpret the answer in terms of the model.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "c41f2797-9dda-5fcd-b24c-d75191f4a5b0",
+      "case_uuid": "6ba1b2b7-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.SP.B.5.b",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "*Summarize numerical data sets in relation to their context, such as by* describing the nature of the attribute under investigation, including how it was measured and its units of measurement.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "3bca2a07-c4ab-57ec-8369-4fdee85e2c49",
+      "case_uuid": "6b9ec473-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "3.MD.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Generate measurement data by measuring lengths using rulers marked with halves and fourths of an inch. Show the data by making a line plot, where the horizontal scale is marked off in appropriate units— whole numbers, halves, or quarters.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "3a650f7a-3b10-55d0-9d07-c2bdf8e08175",
+      "case_uuid": "6b9c2b26-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.RP.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities. *For example, \"The ratio of wings to beaks in the bird house at the zoo was 2:1, because for every 2 wings there was 1 beak.\" \"For every vote candidate A received, candidate C received nearly three votes.\"*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "f5b9a7cb-0df6-57b1-99f2-4ad53200064a",
+      "case_uuid": "6b9f235a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-IC.B.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Use data from a sample survey to estimate a population mean or proportion; develop a margin of error through the use of simulation models for random sampling.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "785dbfaa-3ede-5681-91dc-23574d49a09e",
+      "case_uuid": "6b9c465b-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "8.G.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Verify experimentally the properties of rotations, reflections, and translations:",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "94e31f65-b9f8-5b66-a544-cb5531c798ab",
+      "case_uuid": "6b9fa05a-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-CO.A.5",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Given a geometric figure and a rotation, reflection, or translation, draw the transformed figure using, e.g., graph paper, tracing paper, or geometry software. Specify a sequence of transformations that will carry a given figure onto another.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "ed2e44bc-9dfc-5c18-8937-4612db354baa",
+      "case_uuid": "feb60c25-a92d-43fa-9726-def32ea00b1e",
+      "statement_code": "6.MP3",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Construct viable arguments and critique the reasoning of others.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "d4594d7e-edbd-5c0b-a233-35cccdbbcecf",
+      "case_uuid": "6b9e8f43-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "K.G.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Identify shapes as two-dimensional (lying in a plane, \"flat\") or three-dimensional (\"solid\").",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "80e2ab52-76b7-5dbc-a73e-49efe25ab94f",
+      "case_uuid": "6ba011a4-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-CO.B.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Use geometric descriptions of rigid motions to transform figures and to predict the effect of a given rigid motion on a given figure; given two figures, use the definition of congruence in terms of rigid motions to decide if they are congruent.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "15f1b8b4-b836-5750-866a-f7d5f377a296",
+      "case_uuid": "6ba0b1df-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "8.EE.C.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "8"
+      ],
+      "description": "Analyze and solve pairs of simultaneous linear equations.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "500edab4-e918-5517-a755-0d9f6b57650c",
+      "case_uuid": "6b9fe0ba-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "3.OA.B.6",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Understand division as an unknown-factor problem. *For example, find $32 \\div 8$ by finding the number that makes 32 when multiplied by 8.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "596ffcb9-a709-5ce6-b508-c1d1092b0850",
+      "case_uuid": "6b9edd45-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.EE.A.4",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Identify when two expressions are equivalent (i.e., when the two expressions name the same number regardless of which value is substituted into them). *For example, the expressions y + y + y and 3y are equivalent because they name the same number regardless of which number y stands for.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "2ed1d2aa-c3f0-551d-9ceb-c1931c1e432a",
+      "case_uuid": "6b9bf1fd-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "3.MD.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "7d4b0f0b-04e2-50aa-a0c1-0a690ded7b09",
+      "case_uuid": "6ba0c5dc-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-SRT.C.8",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Use trigonometric ratios and the Pythagorean Theorem to solve right triangles in applied problems.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "53dd1dc9-19ab-582c-8014-de8981768e5d",
+      "case_uuid": "6b9e210d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "3.NF.A.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "3"
+      ],
+      "description": "Explain equivalence of fractions in special cases, and compare fractions by reasoning about their size.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "5e2ee59f-4920-5691-9977-27de1326ccc8",
+      "case_uuid": "00592483-6bd8-4da8-aca6-947d54afcc7f",
+      "statement_code": "K.MP5",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Use appropriate tools strategically.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "b517efad-0cfa-5eb1-994f-70cb48476ba9",
+      "case_uuid": "6b9c73d2-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-GPE.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Derive the equation of a circle of given center and radius using the Pythagorean Theorem; complete the square to find the center and radius of a circle given by an equation.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "dfbae8ab-8976-5b42-8021-5b9ab891eb6e",
+      "case_uuid": "6b9caa8d-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSG-CO.C.10",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Prove theorems about triangles.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "03deb597-5bbe-531a-8f0c-a1b7abcd6407",
+      "case_uuid": "6b9bfea2-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.G.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel lines. Identify these in two-dimensional figures.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "26eee6ee-16af-5d9b-a7d2-be01f79a174b",
+      "case_uuid": "6b9c0d77-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "4.OA.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "4"
+      ],
+      "description": "Interpret a multiplication equation as a comparison, e.g., interpret $35 = 5 \\times 7$ as a statement that 35 is 5 times as many as 7 and 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "f68db5d9-200e-5783-a9cb-22313d6c2cfd",
+      "case_uuid": "6ba276c6-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSF-BF.B.4.d",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Produce an invertible function from a non-invertible function by restricting the domain.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "2ba48d02-35c9-585e-986e-142109ce6a2e",
+      "case_uuid": "6ba16e75-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSN-VM.B.5.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Represent scalar multiplication graphically by scaling vectors and possibly reversing their direction; perform scalar multiplication component-wise, e.g., as $c(v_{x}, v_{y}) = (cv_{x}, cv_{y})$.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "a8ada090-c86a-5050-9e2f-858e1e53e4c2",
+      "case_uuid": "6ba141ef-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "7.SP.C.7.a",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "7"
+      ],
+      "description": "Develop a uniform probability model by assigning equal probability to all outcomes, and use the model to determine probabilities of events. *For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.*",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "357eb159-6963-58fb-80f0-0265d2caa07d",
+      "case_uuid": "6b9dbdbf-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-CP.A.2",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Understand that two events A and B are independent if the probability of A and B occurring together is the product of their probabilities, and use this characterization to determine if they are independent.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "472fb1eb-7c0d-5904-b9a3-e5a6d94b4ab3",
+      "case_uuid": "6b9c9896-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "K.G.A.1",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "K"
+      ],
+      "description": "Describe objects in the environment using names of shapes, and describe the relative positions of these objects using terms such as above, below, beside, in front of, behind, and next to.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "f6e3db4c-3f7d-5660-a52b-18b3941e9abc",
+      "case_uuid": "6ba23ded-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSF-BF.B.4.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "(+) Read values of an inverse function from a graph or a table, given that the function has an inverse.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "a2140fe7-892e-5ae8-8545-7568ccd83076",
+      "case_uuid": "6b9e8595-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "HSS-IC.B.3",
+      "statement_type": "Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "description": "Recognize the purposes of and differences among sample surveys, experiments, and observational studies; explain how randomization relates to each.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "824f11dd-494e-5c21-bac7-69f2ef653b70",
+      "case_uuid": "1b48179d-e3da-43a5-a2af-2ea90e09138b",
+      "statement_code": "2.MP3",
+      "statement_type": "Content Standard",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "2"
+      ],
+      "description": "Construct viable arguments and critique the reasoning of others.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    },
+    {
+      "identifier": "a1991d72-45f4-54f9-affc-b44e6a7538d8",
+      "case_uuid": "6ba21e79-d7cc-11e8-824f-0242ac160002",
+      "statement_code": "6.RP.A.3.c",
+      "statement_type": "Component",
+      "normalized_statement_type": "Standard",
+      "grade_level": [
+        "6"
+      ],
+      "description": "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity); solve problems involving finding the whole, given a part and the percent.",
+      "jurisdiction": "Multi-State",
+      "academic_subject": "Mathematics",
+      "subject_label": "Mathematics"
+    }
+  ]
+}

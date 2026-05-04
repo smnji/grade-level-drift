@@ -1,6 +1,6 @@
 # Scope — Decision Record
 
-**Status:** draft, awaiting ratification
+**Status:** pilot-scope ratified 2026-05-04; full-study sections still draft
 **Last updated:** 2026-05-04
 
 This document fixes the boundaries of the v0 study. Every methodology choice and data pull is checked back against it. Open questions at the bottom resolve before the pilot begins.
@@ -27,11 +27,13 @@ This document fixes the boundaries of the v0 study. Every methodology choice and
 
 ## Jurisdictions
 
-**Proposal.** Multi-State / Common Core anchor + 3–5 representative state frameworks (mix of large/small, CC-adopter/non-adopter, geographic spread). Defer 50-state coverage to v1.
+**Pilot (decided 2026-05-04).** Multi-State Common Core only — both subjects drawn from the CCSS frameworks (ELA UUID `c64961be-…`, Math UUID `c6496676-…`). State frameworks deferred until pilot results are in.
 
-**Rationale.** The headline finding is about LLM behavior given a standard, not state-level differences. A small jurisdiction set is enough to show whether drift varies by framework wording.
+**Full study proposal.** Multi-State / Common Core anchor + 3–5 representative state frameworks (mix of large/small, CC-adopter/non-adopter, geographic spread). Defer 50-state coverage to v1.
 
-**Open question.** Confirm the 3–5 candidate states. Candidate set: California, Texas, Florida, Massachusetts, Virginia (mirrors the standards-substrate bootstrap slice for cross-project consistency).
+**Rationale.** The headline finding is about LLM behavior given a standard, not state-level differences. A small jurisdiction set is enough to show whether drift varies by framework wording. CC-only for the pilot strips the jurisdiction dimension entirely while we debug the pipeline; jurisdiction variance can be added once the rest of the pipeline is stable.
+
+**Open question (deferred to full study).** Confirm the 3–5 candidate states. Candidate set: California, Texas, Florida, Massachusetts, Virginia (mirrors the standards-substrate bootstrap slice for cross-project consistency).
 
 ## Grade bands
 
@@ -59,13 +61,21 @@ This document fixes the boundaries of the v0 study. Every methodology choice and
 
 ## Sample size and stratification
 
-**Proposal.**
-- **Pilot (n = 30):** 5 standards per grade band × ELA/Math mix. Used to debug pipeline and check for unforeseen issues.
-- **Full study (n ≈ 300):** Stratified random sample by (grade band × subject × jurisdiction). Equal allocation per cell.
+**Pilot (decided 2026-05-04, drawn).**
+- n = 100 per subject × 2 subjects = 200 standards.
+- Simple random sample (no stratification). Seed `20260504`. Population: `normalizedStatementType == "Standard"` (1100 ELA + 597 Math eligible items in CCSS).
+- Frozen artifact: [`data/processed/pilot_v1_sample.json`](../data/processed/pilot_v1_sample.json). Re-runnable from `python -m src.snapshot && python -m src.sample`.
+- Purpose: pipeline debugging, prompt-template calibration, evaluator behavior surfacing. Not powered for statistical inference; explicitly *not* the pre-registered sample.
 
-**Rationale.** ~25 standards per cell gives reasonable statistical power for medium effect sizes (Cohen's d ≈ 0.5) at α = 0.05. Total cost is bounded by LLM-generation + evaluator API calls.
+**Full study proposal (n ≈ 300).** Stratified random sample by (grade band × subject × jurisdiction). Equal allocation per cell. Frame and stratification ratified at pre-registration freeze; the pilot's lessons feed the freeze.
 
-**Open question.** Stratify by jurisdiction, or treat jurisdiction as an unmodeled covariate in v0?
+**Rationale.**
+- Pilot prioritizes coverage of the CCSS universe over statistical power: at n=100, the pilot will surface most prompt and evaluator failure modes without burning a calibrated stratification budget on debugging.
+- Full study: ~25 standards per cell gives reasonable power for medium effects (Cohen's d ≈ 0.5) at α = 0.05. Total cost is bounded by LLM-generation + evaluator API calls.
+
+**Open question (deferred to full study).** Stratify by jurisdiction, or treat jurisdiction as an unmodeled covariate in v0?
+
+**Caveat surfaced by the pilot draw.** CCSS HS Math standards carry `gradeLevel = ["9","10","11","12"]` (no single grade) and CCSS ELA pairs grades (9-10, 11-12) at HS by design. These are *framework features*, not data quirks. For per-grade analyses we will need to either (a) drop multi-grade items, (b) treat them as a single HS band, or (c) draw a target grade per item. Decision deferred to the full-study methodology pass; documented in the [pilot-sampling log entry](research-log/2026-05-04-pilot-sampling-plan.md).
 
 ## Evaluators
 
@@ -97,9 +107,10 @@ This document fixes the boundaries of the v0 study. Every methodology choice and
 
 ## Decisions still open
 
-1. Bootstrap-slice state list — confirm the candidate five.
+1. ~~Bootstrap-slice state list — confirm the candidate five.~~ **Deferred to full study.** Pilot is CC-only.
 2. Output length: fixed across grades, or band-tiered?
 3. Second model identity (GPT-4-class vs Gemini vs both).
-4. Whether jurisdiction is a stratification variable or an unmodeled covariate in v0.
+4. ~~Whether jurisdiction is a stratification variable or an unmodeled covariate in v0.~~ **Deferred to full study.** Not applicable to the pilot (single jurisdiction = Multi-State).
+5. **(New)** HS standards in CCSS span grade ranges, not single grades — drop, band, or per-item target-grade draw? Affects per-grade analysis only; no impact on pilot pipeline debugging.
 
-These are resolved before the pilot run begins; resolutions are recorded in `decisions/` ADRs. The same resolutions feed directly into the AsPredicted-style pre-registration; design holes that survive scope.md will surface there. See [`preregistration-template.md`](preregistration-template.md) for the form fields.
+These are resolved before the **full study** run begins; resolutions are recorded in `decisions/` ADRs. The same resolutions feed directly into the AsPredicted-style pre-registration; design holes that survive scope.md will surface there. See [`preregistration-template.md`](preregistration-template.md) for the form fields.
