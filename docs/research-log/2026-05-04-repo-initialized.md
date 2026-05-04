@@ -2,12 +2,12 @@
 date: 2026-05-04
 severity: major
 area: infrastructure
-tags: [repo, scaffold, learning-commons, cluster-5]
+tags: [repo, scaffold, learning-commons, reading-level]
 decisions: [adr-0001]
 title: Repo initialized; data source decided; scaffolding in place
 ---
 
-Initialized the `grade-level-drift` repository as the first investigation under the Cluster 5 (reading-level drift) research line, scoped per the parent question bank in the related `research-questions.md` (Cluster 5, publishing order #1).
+Initialized the `grade-level-drift` repository as the first investigation in a multi-part research line on LLMs and K-12 academic standards. The reading-level question is publishing-order #1 in a private upstream research-questions document.
 
 ## Decisions made today
 

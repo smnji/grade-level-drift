@@ -39,7 +39,7 @@ This study is the first in a planned multi-part investigation of LLM behavior ag
 
 ### 2.4 Position in the broader research line
 
-The companion question bank (parent series) identifies five clusters of LLM-vs-standards questions; this study addresses **Cluster 5** (reading level and text quality of LLM output). Subsequent investigations are planned in Cluster 4 (per-standard entropy and hallucination), then Cluster 3 (LLM-vs-standards behavior tied to interaction data). Each builds methodologically on the previous, so getting the measurement scaffolding right here is a load-bearing decision for the entire line.
+This study is the first in a planned multi-part investigation of LLM behavior against K-12 academic standards. Two follow-up investigations are sketched: one on per-standard model uncertainty and hallucination (using LLM internals and self-consistency to predict where instruction will go wrong), and one that loops in student interaction data to ground reading-level findings in actual learning outcomes. Each builds methodologically on the previous, so getting the measurement scaffolding right here is a load-bearing decision for the entire line.
 
 ## 3. Research questions
 
@@ -58,7 +58,7 @@ The companion question bank (parent series) identifies five clusters of LLM-vs-s
 4. **Mechanism.** Is the model mirroring the standard's reading level, applying a topic-specific default register, or sensitive to prompt phrasing?
 5. **Beyond reading level.** Sentence structure, vocabulary tier, conventionality, cohesion — orthogonal failure modes.
 6. **Decoupling.** Do reading-level mismatch and subject-matter accuracy come apart?
-7. **Loop closure with interaction data.** Does reading-level mismatch correlate with where students get stuck? (Cluster 3 territory.)
+7. **Loop closure with interaction data.** Does reading-level mismatch correlate with where students get stuck? (Deferred to a future investigation that pairs evaluator scores with student interaction data.)
 
 This narrowing is deliberate. v0 establishes the descriptive finding and the measurement scaffolding; mechanism and outcome-grounded follow-ups are higher-investment and depend on having a baseline drift signal to anchor on.
 
@@ -261,7 +261,7 @@ The threats below are surfaced from the literature review (§5) and from our own
 | Analysis | Notebooks for primary, secondary, and exploratory analyses; per-standard drift profiles; decomposition results | T+4 weeks |
 | Internal review | Methodology + results reviewed against this proposal; threats-to-validity check; pre-publication adjustments only on exploratory analyses (primary remains pre-registered) | T+5 weeks |
 | Blog publication | Public post; repo opened to MIT/CC-BY 4.0 license; release artifact attached to a tagged GitHub release | T+6 weeks |
-| Follow-up | Cluster 4 (per-standard entropy and hallucination) proposal opened in a sibling repo | T+8 weeks |
+| Follow-up | Per-standard entropy and hallucination proposal opened in a sibling repo | T+8 weeks |
 
 T = pilot kickoff date. The 6-week-to-publication cadence aligns with the publishing-order plan in the parent question bank.
 

@@ -91,7 +91,7 @@ This document fixes the boundaries of the v0 study. Every methodology choice and
 - Career/technical education (CTE)
 - Subjects beyond ELA and Math (v0)
 - Lesson plans, worked examples, multi-turn dialog (v0)
-- Student outcome data (deferred to Cluster 3)
+- Student outcome data (deferred to a future investigation that pairs evaluator scores with student interaction data)
 - Standards in languages other than English (v0)
 - Re-implementing reading-level metrics from scratch (we use LC's evaluators verbatim)
 

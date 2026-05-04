@@ -16,15 +16,15 @@ The v0 publication answers these three:
 2. **Is drift consistent across models?** Or does each model carry its own bias?
 3. **Are there standards that reliably produce above-grade output across all models — and what do those have in common?** (Vocabulary in the standard? Topic? Abstraction level?)
 
-## Deferred to follow-ups (still inside Cluster 5)
+## Deferred to follow-ups (within the reading-level theme)
 
 4. **Mechanism.** Is the LLM mirroring the standard's reading level, applying a topic-specific default register, or sensitive to prompt phrasing?
 5. **Beyond reading level.** Sentence structure, vocabulary tier (Beck), conventionality, cohesion — does the model miss any of these systematically?
 6. **Decoupling.** Do reading-level mismatch and subject-matter accuracy come apart?
 
-## Deferred to other clusters
+## Deferred to other investigations in the series
 
-7. **Loop closure.** Does reading-level mismatch correlate with where students get stuck (Cluster 5 Q9, requires Cluster 3's interaction data).
+7. **Loop closure.** Does reading-level mismatch correlate with where students get stuck? (Requires student interaction data; deferred to a future investigation in the series.)
 
 ## Downstream impact (where findings land)
 
