@@ -1,0 +1,24 @@
+# Minimal dependencies for the grade-level-drift pipeline.
+# Pin major versions where API stability matters; let pip resolve the rest.
+
+# HTTP and config
+httpx>=0.27
+python-dotenv>=1.0
+
+# Instruction generators
+anthropic>=0.40
+
+# Evaluator backends (Learning Commons evaluators delegate to these)
+openai>=1.50
+google-genai>=0.3
+
+# Analysis
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+scipy>=1.13
+
+# Notebooks
+jupyter>=1.0
+ipykernel>=6.29

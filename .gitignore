@@ -1,0 +1,36 @@
+# Secrets — never commit
+.env
+.env.local
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Generated study artifacts — large, regenerable
+data/generated/
+data/raw/
+data/processed/
+*.parquet
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+.claude/
