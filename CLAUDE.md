@@ -150,16 +150,20 @@ A run is reproducible if a reader can regenerate the headline result without pri
 
 ## 10. Pre-registration
 
-Before the full study run begins, freeze the following in a tagged commit (`pre-reg-v1`):
+Pre-registration uses a 9-field AsPredicted-style form. The template is at [`docs/preregistration-template.md`](docs/preregistration-template.md). When ready to freeze the study, copy the template to `docs/preregistration.md`, fill in every field, commit, tag the commit `pre-reg-v1`, and submit the form to [AsPredicted](https://aspredicted.org) or [OSF Registries](https://osf.io/registries) for an external timestamp. Cite the AsPredicted ID / OSF DOI in the published writeup.
 
-- Sample frame and seed
-- Prompt template (file and SHA)
-- Model IDs and decoding parameters
+The nine fields cover: prior data, the hypothesis, dependent variables, conditions, analysis plan (with α and multiple-comparison policy), sample size and stop rule, anything-else-worth-pre-registering, **what is NOT pre-registered** (the explicit list — anything beyond this is exploratory), and name/date/external-timestamp.
+
+Pilot runs may happen *before* the freeze and may inform what gets frozen. The full study runs *after*. Anything not pre-registered is exploratory and labeled as such in the writeup.
+
+The pre-registration freeze tag (`pre-reg-v1`) also captures the technical details that the form references:
+
+- Sample frame and seed (`data/processed/sample_v{N}.json`)
+- Prompt template SHA
+- Model IDs and decoding parameters (in the run manifest)
 - Evaluator versions and backend model IDs
-- Primary analyses (with specific test statistics and α levels)
-- Hypotheses with predicted directions and magnitudes
-
-Pilot runs may happen *before* the freeze and may inform what gets frozen. The full study runs *after*. Anything not in the pre-registration is exploratory and labeled as such in the writeup.
+- Primary analyses (cited from `research-proposal.qmd §6.5` and `preregistration.md §5`)
+- Hypotheses with predicted directions and magnitudes (cited from `research-proposal.qmd §4` and `preregistration.md §2`)
 
 ## 11. Threats to validity
 
@@ -245,5 +249,6 @@ If using this repo as a template for a new investigation:
    - `docs/research-log/README.md`
 4. Re-initialize git, set up `.env` and `.env.example`, push to a new private repo.
 5. Open the first research-log entry; record the data-source decision as ADR-0001.
+6. **As an exercise in design clarity,** fill [`docs/preregistration-template.md`](docs/preregistration-template.md) once `methodology.md` exists — even before the pilot runs. Filling it surfaces design holes (vague analyses, undefined exclusions, ambiguous stop rules) while they're still cheap to fix. The actual AsPredicted/OSF submission can wait until the freeze tag (`pre-reg-v1`).
 
 The conventions in this file should not need to change between investigations. If they do — that's a signal to update *here*, then carry the update back to other repos in the series.

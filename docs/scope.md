@@ -102,4 +102,4 @@ This document fixes the boundaries of the v0 study. Every methodology choice and
 3. Second model identity (GPT-4-class vs Gemini vs both).
 4. Whether jurisdiction is a stratification variable or an unmodeled covariate in v0.
 
-These are resolved before the pilot run begins; resolutions are recorded in `decisions/` ADRs.
+These are resolved before the pilot run begins; resolutions are recorded in `decisions/` ADRs. The same resolutions feed directly into the AsPredicted-style pre-registration; design holes that survive scope.md will surface there. See [`preregistration-template.md`](preregistration-template.md) for the form fields.
