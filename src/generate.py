@@ -38,6 +38,7 @@ from src.prompts import GENERATOR_PROMPTS, render_grade
 SUBSAMPLE_PATH = REPO_ROOT / "data" / "processed" / "v0_subpilot_sample.json"
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
 REWRITES_DIR = REPO_ROOT / "data" / "interim" / "rewrites"
+PROMPTS_AT_TARGET_DIR = REPO_ROOT / "data" / "interim" / "prompts_at_target"
 
 # Approximate per-call USD cost. Used only for the --max-cost-usd guard, not
 # for billing. Update when OpenAI pricing changes; the guard is conservative
@@ -71,13 +72,43 @@ def load_simplified(rewriter_model: str, standard_id: str) -> str | None:
     return json.loads(p.read_text(encoding="utf-8")).get("simplified_description")
 
 
+def load_prompt_at_target(rewriter_model: str, standard_id: str) -> str | None:
+    p = PROMPTS_AT_TARGET_DIR / rewriter_model / f"{standard_id}.json"
+    if not p.exists():
+        return None
+    return json.loads(p.read_text(encoding="utf-8")).get("prompt_at_target")
+
+
 def estimate_cell_cost(model: str) -> float:
     return PRICING.get(model, PRICING["_default"])
 
 
 def render_user_prompt(
-    *, prompt_name: str, standard: dict[str, Any], description: str
+    *,
+    prompt_name: str,
+    standard: dict[str, Any],
+    description: str,
+    wording: str = "raw",
+    rewriter_model: str | None = None,
 ) -> str:
+    """Render the user message that will be sent to the model.
+
+    For wording ∈ {raw, simplified} the rendered prompt is the S/M/L template
+    with `description` substituted in. For wording == "at_target" the prompt
+    is the *cached pre-rendered prompt at the standard's target grade* — the
+    S/M/L template is bypassed entirely; the same cached prompt is used
+    regardless of `prompt_name` so the v0_run2 cube has 1 effective template.
+    """
+    if wording == "at_target":
+        if rewriter_model is None:
+            raise ValueError("at_target wording requires rewriter_model")
+        text = load_prompt_at_target(rewriter_model, standard["identifier"])
+        if text is None:
+            raise FileNotFoundError(
+                f"prompt-at-target missing for {standard.get('statement_code')!r} "
+                f"({standard['identifier']}). Run `python -m src.rewrite_target` first."
+            )
+        return text
     spec = GENERATOR_PROMPTS[prompt_name]
     grade = render_grade(standard.get("grade_level"))
     return spec.render(
@@ -97,8 +128,15 @@ def generate_one(
     description: str,
     usage: UsageRollup,
     max_tokens: int = 400,
+    rewriter_model: str | None = None,
 ) -> dict[str, Any]:
-    user = render_user_prompt(prompt_name=prompt_name, standard=standard, description=description)
+    user = render_user_prompt(
+        prompt_name=prompt_name,
+        standard=standard,
+        description=description,
+        wording=wording,
+        rewriter_model=rewriter_model,
+    )
     messages = [{"role": "user", "content": user}]
     resp = chat_complete_with_retry(
         client,
@@ -195,8 +233,10 @@ def main() -> None:
             raise SystemExit(f"unknown prompt name: {p!r}")
     wordings = [w.strip() for w in args.wordings.split(",") if w.strip()]
     for w in wordings:
-        if w not in {"raw", "simplified"}:
-            raise SystemExit(f"unknown wording: {w!r} (must be raw|simplified)")
+        if w not in {"raw", "simplified", "at_target"}:
+            raise SystemExit(
+                f"unknown wording: {w!r} (must be raw|simplified|at_target)"
+            )
 
     out_dir = GENERATED_DIR / args.run_id
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -223,6 +263,20 @@ def main() -> None:
             raise SystemExit(
                 f"{len(missing)} standards missing simplified rewrites for model "
                 f"{args.rewriter_model!r}. Run `python -m src.rewrite "
+                f"--model {args.rewriter_model}` first.\n"
+                f"  first 3 missing: {missing[:3]}"
+            )
+    # at_target requires the prompt-at-target cache
+    if "at_target" in wordings:
+        missing = [
+            s["identifier"]
+            for s in standards
+            if load_prompt_at_target(args.rewriter_model, s["identifier"]) is None
+        ]
+        if missing:
+            raise SystemExit(
+                f"{len(missing)} standards missing prompt-at-target rewrites for model "
+                f"{args.rewriter_model!r}. Run `python -m src.rewrite_target "
                 f"--model {args.rewriter_model}` first.\n"
                 f"  first 3 missing: {missing[:3]}"
             )
@@ -277,13 +331,15 @@ def main() -> None:
     for i, (m, p, w, s) in enumerate(cells_to_call, start=1):
         if w == "raw":
             description = s["description"]
-        else:
+        elif w == "simplified":
             description = load_simplified(args.rewriter_model, s["identifier"])
             if description is None:
                 raise SystemExit(
                     f"simplified rewrite missing for {s['identifier']!r} (model "
                     f"{args.rewriter_model!r})"
                 )
+        else:  # at_target — description field is a copy of the standard for record
+            description = s["description"]
         key = cell_key(m, p, w, s["identifier"])
         try:
             record = generate_one(
@@ -295,6 +351,7 @@ def main() -> None:
                 description=description,
                 usage=usage,
                 max_tokens=args.max_tokens,
+                rewriter_model=args.rewriter_model,
             )
         except Exception as e:
             usage.failures += 1
