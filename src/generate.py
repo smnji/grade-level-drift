@@ -43,12 +43,16 @@ REWRITES_DIR = REPO_ROOT / "data" / "interim" / "rewrites"
 # for billing. Update when OpenAI pricing changes; the guard is conservative
 # (rounds to call-grain rather than per-token).
 PRICING: dict[str, float] = {
-    "gpt-5.5": 0.05,
-    "gpt-5.4": 0.04,
-    "gpt-4.1": 0.02,
-    "gpt-4o": 0.02,
-    "gpt-4o-mini": 0.005,
-    "_default": 0.04,
+    # Rough $/call assuming ~150 input + ~250 output tokens per cell at the
+    # vendor's published per-token rates (mid-2026). Conservative — used only
+    # to gate large runs, not to bill anything.
+    "gpt-5.5": 0.015,
+    "gpt-5.4": 0.010,
+    "gpt-5.1": 0.008,
+    "gpt-4.1": 0.003,
+    "gpt-4o": 0.003,
+    "gpt-4o-mini": 0.0008,
+    "_default": 0.015,
 }
 
 

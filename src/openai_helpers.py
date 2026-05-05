@@ -61,6 +61,13 @@ class UsageRollup:
         return "\n".join(lines)
 
 
+def _is_gpt5_family(model: str) -> bool:
+    """GPT-5 family chat models require `max_completion_tokens` and reject
+    non-default `temperature`. Non-chat variants (`-codex`, `-pro`, `-search`)
+    follow the same convention."""
+    return model.startswith("gpt-5") or model.startswith("o1") or model.startswith("o3") or model.startswith("o4")
+
+
 def chat_complete_with_retry(
     client: OpenAI,
     *,
@@ -75,16 +82,26 @@ def chat_complete_with_retry(
 
     Returns a dict with keys: text, model_returned, system_fingerprint,
     prompt_tokens, completion_tokens, finish_reason. Raises on non-transient.
+
+    The GPT-5 family (and the `o1`/`o3`/`o4` reasoning models) use
+    `max_completion_tokens` and only support the vendor-default temperature.
+    For these models the `temperature` argument is ignored; the response
+    will still be temperature=1.0 from the model's perspective. This is a
+    documented determinism deviation — see
+    `docs/research-log/2026-05-05-gpt5-temperature-deviation.md`.
     """
+    is_gpt5 = _is_gpt5_family(model)
+    kwargs: dict[str, Any] = {"model": model, "messages": messages}
+    if is_gpt5:
+        kwargs["max_completion_tokens"] = max_tokens
+    else:
+        kwargs["max_tokens"] = max_tokens
+        kwargs["temperature"] = temperature
+
     last_exc: Exception | None = None
     for attempt in range(1, max_attempts + 1):
         try:
-            resp = client.chat.completions.create(
-                model=model,
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-            )
+            resp = client.chat.completions.create(**kwargs)
             choice = resp.choices[0]
             usage = resp.usage
             return {

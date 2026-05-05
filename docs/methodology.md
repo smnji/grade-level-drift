@@ -169,8 +169,8 @@ Do not include worked examples or follow-up questions.
 
 ### Generator spec
 
-- **Temperature:** 0 (deterministic). Within-model variance is not a v0 question; can be added later by sweeping temperature on a subset.
-- **max_tokens:** 400 (covers 100-250 word target with margin; logged per call).
+- **Temperature:** 0 for `gpt-4.1`; **vendor default (1.0) for the GPT-5 family** because those models reject custom temperature values (`Unsupported value: 'temperature' does not support 0 with this model`). This is a known deviation from full determinism for two of the three v0 models — see [`research-log/2026-05-05-gpt5-temperature-deviation.md`](research-log/2026-05-05-gpt5-temperature-deviation.md). Within-cell stochasticity is treated as added noise on the Δ estimate; aggregate Δ per (model × condition × grade-band) remains well-defined as the mean over many cells.
+- **max_tokens:** 400 (covers 100-250 word target with margin; logged per call). For the GPT-5 family this is sent as `max_completion_tokens`; for `gpt-4.1` as `max_tokens`. The helper `src/openai_helpers.py:chat_complete_with_retry` branches on the model family.
 - **Storage:** raw outputs at `data/generated/{run_id}/{cell_key}.json`. The cell key is `{model}__{prompt}__{wording}__{standard_id}`.
 - **Output schema:** the response text, OpenAI usage block (prompt_tokens, completion_tokens, total_tokens), the model ID actually returned (in case OpenAI routes to a versioned variant), the prompt SHA, the wording-condition SHA, the system fingerprint when present, and the wall-clock timestamp.
 
