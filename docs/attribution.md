@@ -19,8 +19,8 @@ The v0 evaluation pipeline is fully deterministic. No LLM-as-judge is used. Ever
 
 ### Vocabulary tier word lists
 
-- **Coxhead's Academic Word List (AWL)** — 570 word families across 28 sub-lists; the standard reference for Tier-2 (Beck/McKeown) academic vocabulary. Free download from Victoria University of Wellington under fair-use terms for research. https://www.wgtn.ac.nz/lals/resources/academicwordlist
-- **New General Service List (NGSL)** — 2,800 most useful general English words. Open-licensed. http://www.newgeneralservicelist.org
+- **Coxhead's Academic Word List (AWL)** — 570 word families across 28 sub-lists; the standard reference for Tier-2 (Beck/McKeown) academic vocabulary. Free download from Victoria University of Wellington under fair-use terms for research. https://www.wgtn.ac.nz/lals/resources/academicwordlist. The 570 headwords are embedded verbatim at [`src/evaluators/wordlists/awl.txt`](../src/evaluators/wordlists/awl.txt) (SHA-256 `22bf86cd84fafec9a3b558be86ccd0fc4ea0b09f4acb9dcf0076af800e80d951`), fetched 2026-05-05 from the EAP Foundation mirror at https://www.eapfoundation.com/vocab/academic/awllists/.
+- **New General Service List (NGSL)** — 2,800 most useful general English words. Browne, C., Culligan, B., & Phillips, J. (2013). https://www.newgeneralservicelist.com. The 2,799-headword EAP Foundation mirror (https://www.eapfoundation.com/vocab/general/ngsl/) is embedded verbatim at [`src/evaluators/wordlists/ngsl.txt`](../src/evaluators/wordlists/ngsl.txt) (SHA-256 `1befc69f89d4d55bc739e7a9c132b04bd3be15ce3b1f719b0f6071ba9bf3be8f`), fetched 2026-05-05. The mirror omits a small number of closed-class items (numerals, some modals); see [`src/evaluators/wordlists/README.md`](../src/evaluators/wordlists/README.md).
 - **Dale-Chall list** — 3,000 words familiar to 4th-grade readers (bundled with `textstat`). Public-domain reference list.
 
 ### Syntactic complexity
