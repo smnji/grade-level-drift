@@ -179,6 +179,8 @@ def section_data(df: pd.DataFrame) -> str:
 
 
 def section_headline(df: pd.DataFrame) -> str:
+    from scipy import stats as _stats
+
     g = _generations(df).dropna(subset=["delta_ensemble"])
     fig = px.histogram(
         g,
@@ -194,6 +196,38 @@ def section_headline(df: pd.DataFrame) -> str:
     fig.add_vline(x=0, line_dash="dash", line_color="black", opacity=0.6)
     fig.update_layout(height=380, margin=dict(t=60, l=10, r=10, b=10), showlegend=False)
     fig.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
+
+    # primary-statistics table
+    rows = []
+    for model, sub in g.groupby("model", dropna=False):
+        d = sub["delta_ensemble"].dropna()
+        n = len(d)
+        if n < 2:
+            continue
+        mean = float(d.mean())
+        sd = float(d.std(ddof=1))
+        cohens_d = mean / sd if sd > 0 else float("nan")
+        lo, hi = _ci95(d)
+        # sign test against zero (two-sided binomial)
+        pos = int((d > 0).sum())
+        neg = int((d < 0).sum())
+        n_eff = pos + neg
+        if n_eff > 0:
+            p_sign = float(_stats.binomtest(pos, n_eff, p=0.5, alternative="two-sided").pvalue)
+        else:
+            p_sign = float("nan")
+        rows.append(
+            {
+                "model": str(model),
+                "n": n,
+                "mean Δ": round(mean, 2),
+                "95% CI": f"[{lo:+.2f}, {hi:+.2f}]",
+                "Cohen's d": round(cohens_d, 2),
+                "% above 0": f"{(d > 0).mean():.0%}",
+                "sign-test p": f"{p_sign:.2g}",
+            }
+        )
+    stats_html = pd.DataFrame(rows).to_html(index=False, border=0, classes="summary")
     return f"""
 <section id="headline">
   <h2>3. Headline finding</h2>
@@ -202,6 +236,15 @@ def section_headline(df: pd.DataFrame) -> str:
     than asked for. The dashed line at Δ=0 marks "exactly on target."
   </p>
   {_fig_to_div(fig, include_js=False)}
+  <h3>Primary statistics — Δ vs zero, per model</h3>
+  {stats_html}
+  <p class="caption">
+    Cohen's d = mean Δ / SD(Δ); a one-sample effect size against zero.
+    Sign-test p is two-sided binomial vs the null of equal +/− cells.
+    Holm-Bonferroni correction across the {len(rows) or 0} pre-registered
+    models lifts the rejection threshold to α/(k+1−i) per the
+    Generator-spec analysis plan.
+  </p>
 </section>
 """
 
