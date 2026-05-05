@@ -12,6 +12,24 @@ The v0 cube finished generation, scoring, and reporting today. n = 1,080 generat
 
 Across all three OpenAI frontier models and all 18 generation conditions per standard, generated student-facing explanations land **+3.29 grade levels above the standard's target** (SD 2.20; 92.2% of cells above zero; Cohen's d = 1.49). The effect is large and the direction is unambiguous.
 
+## Headline reframe — is it the prompt or the model? (added 2026-05-05, post-run)
+
+Scoring the **full prompt actually sent to the model** (S/M/L scaffolding + standard wording + grade specification) and comparing to both the target grade and the model's output:
+
+| Contributor | Mean grade levels |
+|---|---|
+| Prompt − target | **+3.19** |
+| Output − target (the headline drift) | +3.29 |
+| Output − prompt (model's own residual) | **+0.10** |
+
+At the population level the model is **not** drifting on top of the prompt — it is faithfully matching the prompt's reading level, which is itself ~3 grade levels above the target the prompt asks for. The systematic drift is in the prompt, not in the model.
+
+Per-cell tracking is weaker — Pearson r(prompt grade, output grade) = 0.30, R² = 0.09 — so individual outputs still vary in register independent of the prompt. The means align (no systematic added drift); the variance is largely model-internal.
+
+This is a substantive reframe of the headline rather than a contradiction of it: the +3.3 grade-level number is real, but the right *cause* is "we wrote our prompts at adult reading level" rather than "the model can't generate at the right reading level." Implication for the writeup and for any practitioner reading the report: prompt engineering — specifically, writing the *whole prompt* (not just the standard's description) at the target grade — is the largest available lever. The simplified-wording arm is a weak version of that intervention; it only simplified the standard's description, not the surrounding scaffolding.
+
+The new section 3a in the report walks through this decomposition explicitly.
+
 ## Cross-model agreement
 
 The per-model means are essentially identical:

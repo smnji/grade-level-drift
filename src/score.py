@@ -27,6 +27,7 @@ import pandas as pd
 
 from src.evaluators import FEATURE_COLUMNS, score
 from src.openai_helpers import REPO_ROOT
+from src.prompts import GENERATOR_PROMPTS, render_grade
 
 SUBSAMPLE_PATH = REPO_ROOT / "data" / "processed" / "v0_subpilot_sample.json"
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
@@ -133,6 +134,50 @@ def main() -> None:
         rows.append(_score_with_meta(cell["output_text"], meta))
         if i % 100 == 0 or i == len(cell_files):
             print(f"  generations: {i}/{len(cell_files)}")
+
+    # 1b) prompt register — score the *full prompt sent to the model* per
+    # (template, wording, standard). One row per unique prompt; same prompt
+    # is shared across the 3 models. The point is to separate "the input
+    # already drifts" from "the model adds drift."
+    print(f"  scoring 360 unique prompts (3 templates × 2 wordings × {len(standards)} standards)")
+    for p_name, p_spec in GENERATOR_PROMPTS.items():
+        for wording in ["raw", "simplified"]:
+            for sid, std in standards.items():
+                if wording == "raw":
+                    desc = std["description"]
+                else:
+                    rw_path = REWRITES_DIR / args.rewriter_model / f"{sid}.json"
+                    if not rw_path.exists():
+                        continue
+                    desc = json.loads(rw_path.read_text(encoding="utf-8")).get(
+                        "simplified_description", ""
+                    )
+                target = numeric_grade(std.get("grade_level"))
+                prompt_text = p_spec.render(
+                    grade=render_grade(std.get("grade_level")),
+                    description=desc,
+                    statement_code=std.get("statement_code") or sid,
+                )
+                meta = {
+                    "kind": "prompt",
+                    "run_id": args.run_id,
+                    "cell_key": None,
+                    "model": None,
+                    "model_returned": None,
+                    "prompt_name": p_name,
+                    "prompt_sha": p_spec.sha,
+                    "wording": wording,
+                    "standard_id": sid,
+                    "statement_code": std.get("statement_code"),
+                    "subject": std.get("academic_subject"),
+                    "grade_level_raw": ",".join(std.get("grade_level") or []) or None,
+                    "target_grade": target,
+                    "grade_band": grade_band(target),
+                    "prompt_tokens": None,
+                    "completion_tokens": None,
+                    "finish_reason": None,
+                }
+                rows.append(_score_with_meta(prompt_text, meta))
 
     # 2) raw + simplified standard descriptions (covariates)
     for j, (sid, std) in enumerate(standards.items(), start=1):

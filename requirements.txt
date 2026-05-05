@@ -18,6 +18,7 @@ pyphen>=0.14         # syllable counting (textstat dependency)
 pandas>=2.2
 numpy>=1.26
 scipy>=1.13
+statsmodels>=0.14    # OLS trendlines in plotly express scatter (report.py)
 plotly>=5.20         # interactive HTML visualizations
 pyarrow>=15.0        # parquet I/O for per-output scores
 

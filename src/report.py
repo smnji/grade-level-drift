@@ -249,6 +249,93 @@ def section_headline(df: pd.DataFrame) -> str:
 """
 
 
+def section_prompt_register(df: pd.DataFrame) -> str:
+    """The headline reframe: separate prompt drift from model drift."""
+    g = _generations(df).dropna(subset=["delta_ensemble"]).copy()
+    p = df[df["kind"] == "prompt"].dropna(subset=["ensemble_grade_median"])
+    if p.empty:
+        return ""
+
+    pkey = p[["prompt_name", "wording", "standard_id", "ensemble_grade_median"]].rename(
+        columns={"ensemble_grade_median": "prompt_grade"}
+    )
+    m = g.merge(pkey, on=["prompt_name", "wording", "standard_id"])
+
+    prompt_minus_target = (m["prompt_grade"] - m["target_grade"]).mean()
+    output_minus_target = m["delta_ensemble"].mean()
+    output_minus_prompt = (m["ensemble_grade_median"] - m["prompt_grade"]).mean()
+    r = float(m["prompt_grade"].corr(m["ensemble_grade_median"]))
+
+    fig = px.scatter(
+        m,
+        x="prompt_grade",
+        y="ensemble_grade_median",
+        color="model",
+        opacity=0.55,
+        color_discrete_sequence=px.colors.qualitative.Set2,
+        title="Prompt reading level vs output reading level — does the model just match the prompt?",
+        trendline="ols",
+    )
+    # y = x reference line
+    lo = float(min(m["prompt_grade"].min(), m["ensemble_grade_median"].min()))
+    hi = float(max(m["prompt_grade"].max(), m["ensemble_grade_median"].max()))
+    fig.add_shape(
+        type="line", x0=lo, y0=lo, x1=hi, y1=hi,
+        line=dict(color="black", dash="dash", width=1),
+    )
+    fig.update_layout(height=480, margin=dict(t=70, l=10, r=10, b=10))
+
+    decomp_rows = [
+        {"contributor": "Prompt − target",
+         "mean grade levels": round(prompt_minus_target, 2),
+         "interpretation": "How far the input we sent the model is above its own stated target"},
+        {"contributor": "Output − target (Δ_ensemble)",
+         "mean grade levels": round(output_minus_target, 2),
+         "interpretation": "The headline drift number"},
+        {"contributor": "Output − prompt (model residual)",
+         "mean grade levels": round(output_minus_prompt, 2),
+         "interpretation": "What the model contributes on top of the prompt"},
+    ]
+    decomp_html = pd.DataFrame(decomp_rows).to_html(index=False, border=0, classes="summary")
+
+    return f"""
+<section id="prompt-register">
+  <h2>3a. Headline reframe — is it the prompt or the model?</h2>
+  <p>
+    The "drift" in section 3 is the gap between the output's reading level and
+    the standard's stated target grade. But the prompt we send the model
+    is itself plain English — it has its own reading level. If the prompt
+    is already above the target grade, a model that perfectly matches the
+    prompt's register would still appear to "drift" by exactly the prompt's
+    own offset. So we score the full prompt the model actually sees and
+    decompose:
+  </p>
+  {decomp_html}
+  <p>
+    Average prompt-to-target gap is roughly equal to the headline Δ.
+    The mean output-minus-prompt residual is essentially zero —
+    <b>at the population level the model is faithfully matching the
+    prompt's register, not adding drift on top of it</b>.
+  </p>
+  <p>
+    But per cell, the picture is noisier: Pearson r(prompt grade,
+    output grade) = {r:.2f}, R² ≈ {r*r:.2f}. So the means align (no
+    systematic added drift) while the per-cell variance is largely
+    not explained by prompt grade — the model has its own register
+    that varies cell-to-cell independent of the prompt.
+  </p>
+  {_fig_to_div(fig, include_js=False)}
+  <p class="caption">
+    Implication for prompt engineering: writing prompts at the standard's
+    target grade is likely the single largest available lever for closing
+    the +3.3 grade-level gap. The simplified-wording arm in section 5 is a
+    weak version of this — it only simplifies the standard's own description,
+    not the surrounding S/M/L scaffolding.
+  </p>
+</section>
+"""
+
+
 def section_cube(df: pd.DataFrame) -> str:
     """The 4-way analysis cube — mean Δ across (grade_band × model × prompt × wording)."""
     g = _generations(df).dropna(subset=["delta_ensemble"])
@@ -598,6 +685,7 @@ def build_report(scores_path: Path, run_id: str, manifest_path: Path | None) -> 
         section_hook(df),
         section_data(df),
         section_headline(df),
+        section_prompt_register(df),
         section_cube(df),
         section_prompt(df),
         section_wording(df),
