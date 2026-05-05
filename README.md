@@ -55,7 +55,13 @@ Full operational spec: [`docs/methodology.md`](docs/methodology.md). Each run pi
 
 ## Status
 
-**v0 pilot complete (2026-05-05).** n = 1,080 generations across 3 OpenAI frontier models × 3 prompt variants × 2 wording conditions × 60 CCSS standards. **Headline:** mean Δ = +3.3 grade levels above target (Cohen's d = 1.49; 92% of cells above zero). Cross-model ICC(2,1) = 0.89; direction-preservation = 95%. The simplified-wording arm reduces drift by 0.5 grade levels (paired t, p < 10⁻³ for every model). See [`docs/research-log/2026-05-05-v0-run1-results.md`](docs/research-log/2026-05-05-v0-run1-results.md) and [`reports/v0_run1_report.html`](reports/v0_run1_report.html). Pre-registration freeze (`pre-reg-v1`) is the next milestone.
+**v0 pilot + intervention complete (2026-05-05).**
+
+- **v0_run1 (baseline):** n = 1,080 generations × 3 OpenAI frontier models × 3 prompt variants × 2 wording conditions × 60 CCSS standards. Headline: mean Δ = **+3.29 grade levels above target** (Cohen's d = 1.49; 92% of cells above zero). Cross-model ICC(2,1) = 0.89; direction-preservation = 95%.
+- **The reframe:** the prompt itself sits +3.19 grade levels above target. The model is mostly inheriting the prompt's register, not adding drift on top of it (population-mean residual = +0.10).
+- **v0_run2 (intervention):** 180 generations, same 60 standards × 3 models, with the *whole prompt* rewritten at each standard's target grade. Headline: mean Δ = **+1.25** (Cohen's d = 0.56; 73% above zero). Paired t-test reduction +1.87 grade levels, t = 9.13, p ≈ 10⁻¹⁶. **62% of the baseline gap closes** when the prompt is at-target; the residual ~+1.3 is bottlenecked by the rewriter's own drift at extreme grade bands.
+
+See [`docs/research-log/2026-05-05-v0-run1-results.md`](docs/research-log/2026-05-05-v0-run1-results.md), [`docs/research-log/2026-05-05-v0-run2-prompt-at-target.md`](docs/research-log/2026-05-05-v0-run2-prompt-at-target.md), and [`reports/v0_run1_report.html`](reports/v0_run1_report.html) (§11 contains the intervention comparison). Pre-registration freeze (`pre-reg-v1`) is the next milestone.
 
 ## Data and methodology dependencies
 
