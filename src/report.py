@@ -533,13 +533,17 @@ def build_report(scores_path: Path, run_id: str, manifest_path: Path | None) -> 
             f"scoring_stack={html.escape(m.get('scoring_stack',{}).get('scoring_stack_version',''))}</div>"
         )
 
-    # plotly.js inline only once (first figure-bearing div). Easiest: use
-    # `include_plotlyjs="inline"` on the first call and False afterwards.
-    # We've passed False in helpers; bundle plotly.js explicitly here.
-    plotly_js = to_html(go.Figure(), include_plotlyjs="inline", full_html=False)
-    # `to_html` returns "<script>..plotly..</script><div>..</div>" — extract
-    # only the script tag.
-    js_only = plotly_js.split("<div", 1)[0]
+    # plotly.js inline only once. `include_plotlyjs="inline"` returns
+    # `<div><script>config</script><script>plotly.min.js bundle</script>...</div><script>Plotly.newPlot(...)</script>`.
+    # We extract just the two script tags (config + bundle) so figure-only
+    # divs elsewhere in the report can call `Plotly.newPlot` against it.
+    import re
+
+    inline_js = to_html(go.Figure(), include_plotlyjs="inline", full_html=False)
+    scripts = re.findall(r"<script[^>]*>.*?</script>", inline_js, re.DOTALL)
+    # The first two scripts are config + the plotly.js bundle. The third is
+    # the placeholder figure's newPlot call, which we discard.
+    js_only = "\n".join(scripts[:2])
 
     body = "\n".join(sections)
     return f"""<!DOCTYPE html>
