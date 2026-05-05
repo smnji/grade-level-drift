@@ -2,7 +2,7 @@
 
 Investigating whether LLM-generated K-12 instruction lands at the target standard's grade level — or systematically drifts.
 
-This is the first investigation in a multi-part series. The full research plan, literature review, and methodology live in [`docs/research-proposal.md`](docs/research-proposal.md).
+This is the first investigation in a multi-part series. The full research plan, literature review, and methodology live in [`docs/research-proposal.qmd`](docs/research-proposal.qmd).
 
 ## Central question
 
@@ -21,7 +21,7 @@ If LLM tutors and content generators systematically miss the target reading leve
 | [`data/`](data/) | Local data (most contents gitignored — regenerable from the API or JSONL exports) |
 | [`notebooks/`](notebooks/) | Exploratory and pilot analyses |
 
-Start at [`docs/research-proposal.md`](docs/research-proposal.md) for the full picture, or [`docs/charter.md`](docs/charter.md) for the question map.
+Start at [`docs/research-proposal.qmd`](docs/research-proposal.qmd) for the full picture, or [`docs/charter.md`](docs/charter.md) for the question map.
 
 ## Quickstart (once dependencies are installed)
 
