@@ -55,7 +55,7 @@ Full operational spec: [`docs/methodology.md`](docs/methodology.md). Each run pi
 
 ## Status
 
-Pre-pilot. Repo initialized 2026-05-04. Charter, scope, methodology, and full research proposal complete. Pilot run pending resolution of the four open decisions in [`docs/scope.md`](docs/scope.md#decisions-still-open).
+**v0 pilot complete (2026-05-05).** n = 1,080 generations across 3 OpenAI frontier models × 3 prompt variants × 2 wording conditions × 60 CCSS standards. **Headline:** mean Δ = +3.3 grade levels above target (Cohen's d = 1.49; 92% of cells above zero). Cross-model ICC(2,1) = 0.89; direction-preservation = 95%. The simplified-wording arm reduces drift by 0.5 grade levels (paired t, p < 10⁻³ for every model). See [`docs/research-log/2026-05-05-v0-run1-results.md`](docs/research-log/2026-05-05-v0-run1-results.md) and [`reports/v0_run1_report.html`](reports/v0_run1_report.html). Pre-registration freeze (`pre-reg-v1`) is the next milestone.
 
 ## Data and methodology dependencies
 
