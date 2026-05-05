@@ -249,6 +249,47 @@ def section_headline(df: pd.DataFrame) -> str:
 """
 
 
+def section_cube(df: pd.DataFrame) -> str:
+    """The 4-way analysis cube — mean Δ across (grade_band × model × prompt × wording)."""
+    g = _generations(df).dropna(subset=["delta_ensemble"])
+    if g.empty:
+        return ""
+    pivot = (
+        g.groupby(["grade_band", "model", "prompt_name", "wording"])
+        ["delta_ensemble"]
+        .mean()
+        .reset_index()
+    )
+    band_order = ["K-2", "3-5", "6-8", "9-12"]
+    bands_present = [b for b in band_order if b in pivot["grade_band"].unique()]
+    fig = px.density_heatmap(
+        pivot,
+        x="model",
+        y="grade_band",
+        z="delta_ensemble",
+        facet_col="prompt_name",
+        facet_row="wording",
+        category_orders={"grade_band": bands_present, "prompt_name": ["S", "M", "L"]},
+        color_continuous_scale="RdBu_r",
+        color_continuous_midpoint=0,
+        title="Mean Δ across the 4-way cube — rows=wording, cols=prompt",
+        histfunc="avg",
+    )
+    fig.update_layout(height=520, margin=dict(t=80, l=10, r=10, b=10))
+    fig.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
+    return f"""
+<section id="cube">
+  <h2>3a. The full cube — mean Δ by grade band × model × prompt × wording</h2>
+  <p>
+    Red cells exceed the target grade; blue cells fall below. The pre-registered
+    headline analysis is the 4-way interaction; everything else is a marginal
+    of this cube.
+  </p>
+  {_fig_to_div(fig, include_js=False)}
+</section>
+"""
+
+
 def section_prompt(df: pd.DataFrame) -> str:
     g = _generations(df).dropna(subset=["delta_ensemble"])
     fig = px.box(
@@ -557,6 +598,7 @@ def build_report(scores_path: Path, run_id: str, manifest_path: Path | None) -> 
         section_hook(df),
         section_data(df),
         section_headline(df),
+        section_cube(df),
         section_prompt(df),
         section_wording(df),
         section_per_standard(df, run_id),
