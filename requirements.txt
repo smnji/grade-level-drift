@@ -5,21 +5,23 @@
 httpx>=0.27
 python-dotenv>=1.0
 
-# Instruction generators
-anthropic>=0.40
-
-# Evaluator backends (Learning Commons evaluators delegate to these)
+# Instruction generation + standard rewriting (only LLM step in the pipeline)
 openai>=1.50
-google-genai>=0.3
 
-# Analysis
+# Deterministic evaluation stack — no LLM-as-judge in v0
+textstat>=0.7        # Flesch-Kincaid, SMOG, Coleman-Liau, ARI, Gunning Fog, Dale-Chall, ...
+spacy>=3.7           # dependency parsing for syntactic complexity features
+scikit-learn>=1.4    # optional CLEAR-calibrated grade-level regressor
+pyphen>=0.14         # syllable counting (textstat dependency)
+
+# Analysis + interactive reporting
 pandas>=2.2
 numpy>=1.26
-matplotlib>=3.8
-seaborn>=0.13
 scipy>=1.13
+plotly>=5.20         # interactive HTML visualizations
+pyarrow>=15.0        # parquet I/O for per-output scores
 
-# Notebooks
+# Notebooks (kept for exploratory work; canonical logic lives in src/)
 jupyter>=1.0
 ipykernel>=6.29
 
@@ -28,6 +30,7 @@ ipykernel>=6.29
 # Used to render docs/research-proposal.qmd to HTML/PDF.
 #   macOS:    brew install --cask quarto
 #   Linux:    download .deb / .rpm from quarto.org/docs/get-started/
-# Render via the convenience script:
-#   bin/render
-# (writes to docs/_site/research-proposal.{html,pdf})
+# Render via:  bin/render
+#
+# spaCy English model — install once after pip install:
+#   python -m spacy download en_core_web_sm

@@ -10,7 +10,7 @@ This is the first investigation in a multi-part series. The full research plan, 
 
 ## Why this matters
 
-If LLM tutors and content generators systematically miss the target reading level, every downstream claim about "AI-personalized learning" inherits that miss. Reading-level drift is also the cleanest first measurement to take: the instrument exists ([Learning Commons' Grade Level Appropriateness Evaluator](https://docs.learningcommons.org/evaluators/literacy-evaluators/grade-level-appropriateness-evaluator/about-this-evaluator)), no student-interaction data is required, and the result is publishable in either direction.
+If LLM tutors and content generators systematically miss the target reading level, every downstream claim about "AI-personalized learning" inherits that miss. Reading-level drift is also the cleanest first measurement to take: the instruments exist (50+ years of validated open-source readability formulas — Flesch-Kincaid, SMOG, Coleman-Liau, Dale-Chall — combined with vocabulary-tier and dependency-parsing features, optionally calibrated against the open [CLEAR expert-rated corpus](https://github.com/scrosseye/CLEAR-Corpus)), no student-interaction data is required, and the result is publishable in either direction.
 
 ## Layout
 
@@ -41,9 +41,12 @@ Pre-pilot. Repo initialized 2026-05-04. Charter, scope, methodology, and full re
 This work builds on:
 
 - **Learning Commons Knowledge Graph** — academic standards data, CC BY 4.0
-- **Learning Commons Evaluators** — literacy evaluation instruments, MIT licensed, co-designed with Student Achievement Partners and the Achievement Network
+- **`textstat`** (MIT) — classical readability formula ensemble (Flesch-Kincaid, SMOG, Coleman-Liau, ARI, Gunning Fog, Dale-Chall)
+- **spaCy** (MIT) — dependency parsing for syntactic complexity features
+- **Coxhead's Academic Word List** + **New General Service List** — open vocabulary-tier references
+- **CLEAR corpus** — expert-rated grade-level benchmark for optional ridge-regression calibration
 
-Full attribution in [`docs/attribution.md`](docs/attribution.md).
+Full attribution in [`docs/attribution.md`](docs/attribution.md). Evaluation is fully deterministic; no LLM-as-judge in v0.
 
 ## License
 

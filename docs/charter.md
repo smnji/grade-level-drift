@@ -31,4 +31,4 @@ The v0 publication answers these three:
 - AI tutoring product design — model selection, prompt engineering, content QA gates.
 - K-12 LLM safety literature — adds a per-standard instructional risk dimension.
 - Standards-aligned content generation — informs whether the standard text alone is enough conditioning, or whether grade-level scaffolding must be supplied.
-- Methodology contribution — establishes a reusable LC-evaluator-based pipeline for measuring AI educational text quality.
+- Methodology contribution — establishes a reusable, fully deterministic, open-source pipeline (`textstat` + spaCy + Coxhead AWL + NGSL + optional CLEAR-calibrated regressor) for measuring AI educational text reading-level appropriateness without LLM-as-judge.
