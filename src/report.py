@@ -123,6 +123,7 @@ def section_hook(df: pd.DataFrame) -> str:
         + "</tbody></table>"
     )
     overall_mean = g["delta_ensemble"].mean()
+    above = (g["delta_ensemble"] > 0).mean()
     direction = "above" if overall_mean > 0 else "below"
     return f"""
 <section id="hook">
@@ -130,7 +131,8 @@ def section_hook(df: pd.DataFrame) -> str:
   <p class="lead">
     When asked to teach a K-12 standard, frontier OpenAI models drift
     <b>{abs(overall_mean):.1f} grade levels {direction}</b> the target reading
-    level, on average across {len(g):,} generations.
+    level, on average across {len(g):,} generations. <b>{above:.0%}</b> of
+    generated explanations land above their target grade.
   </p>
   {table}
   <p class="caption">
@@ -297,7 +299,7 @@ def section_wording(df: pd.DataFrame) -> str:
 """
 
 
-def section_per_standard(df: pd.DataFrame) -> str:
+def section_per_standard(df: pd.DataFrame, run_id: str) -> str:
     g = _generations(df).dropna(subset=["delta_ensemble"])
     by_std = (
         g.groupby(["standard_id", "statement_code", "subject", "target_grade"])
@@ -315,6 +317,36 @@ def section_per_standard(df: pd.DataFrame) -> str:
     bot_html = bot[["statement_code", "subject", "target_grade", "mean_delta", "sd_delta", "n"]].round(
         2
     ).to_html(index=False, border=0, classes="summary")
+
+    # one example generation per top-drift standard, click to expand
+    examples_html_parts: list[str] = []
+    gen_dir = REPO_ROOT / "data" / "generated" / run_id
+    for _, row in top.head(5).iterrows():
+        sid = row["standard_id"]
+        code = row["statement_code"] or sid
+        # pick the first generation file that matches this standard
+        matches = sorted(gen_dir.glob(f"*__{sid}.json"))
+        if not matches:
+            continue
+        try:
+            cell = json.loads(matches[0].read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        examples_html_parts.append(
+            f"<details><summary><b>{html.escape(str(code))}</b> "
+            f"(target grade {row['target_grade']:.0f}, mean Δ {row['mean_delta']:+.2f}) "
+            f"— {html.escape(cell.get('model',''))} {html.escape(cell.get('prompt_name',''))}/"
+            f"{html.escape(cell.get('wording',''))}</summary>"
+            f"<p><i>Standard:</i> {html.escape(cell.get('description_used',''))}</p>"
+            f"<p><i>Generated:</i></p>"
+            f"<blockquote>{html.escape(cell.get('output_text','')).replace(chr(10), '<br>')}</blockquote>"
+            f"</details>"
+        )
+    examples_block = (
+        "<h3>Example generations from the most-above-target standards</h3>"
+        + "\n".join(examples_html_parts)
+    ) if examples_html_parts else ""
+
     return f"""
 <section id="per-standard">
   <h2>6. Which standards drift hardest?</h2>
@@ -323,6 +355,7 @@ def section_per_standard(df: pd.DataFrame) -> str:
     <div class="col"><h3>Most above target</h3>{top_html}</div>
     <div class="col"><h3>Most below target</h3>{bot_html}</div>
   </div>
+  {examples_block}
 </section>
 """
 
@@ -483,7 +516,7 @@ def build_report(scores_path: Path, run_id: str, manifest_path: Path | None) -> 
         section_headline(df),
         section_prompt(df),
         section_wording(df),
-        section_per_standard(df),
+        section_per_standard(df, run_id),
         section_cross_model(df),
         section_convergent(df),
         section_caveats(),
