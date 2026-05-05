@@ -26,11 +26,32 @@ Start at [`docs/research-proposal.md`](docs/research-proposal.md) for the full p
 ## Quickstart (once dependencies are installed)
 
 ```bash
-cp .env.example .env  # then fill in API keys
+cp .env.example .env  # then fill in API keys (OPENAI_API_KEY, LC_API_KEY)
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 python -c "from src.lc_client import LCClient; print(LCClient().list_frameworks()[:3])"
 ```
+
+## Reproducing a v0 run end-to-end
+
+```bash
+# 1. snapshot + sample (LC API; cached locally after the first run)
+python -m src.snapshot
+python -m src.sample
+python -m src.sub_sample
+
+# 2. generation cube (OpenAI API — ~$10-25 wall-clock cost)
+python -m src.rewrite                          # 60 cached simplified wordings
+python -m src.generate --run-id v0_run1        # 1,080 cells, idempotent on cell_key
+
+# 3. deterministic scoring + interactive report (no API calls)
+python -m src.score --run-id v0_run1
+python -m src.report --run-id v0_run1
+open reports/v0_run1_report.html
+```
+
+Full operational spec: [`docs/methodology.md`](docs/methodology.md). Each run pins a manifest at `data/processed/{run_id}_manifest.json` capturing model IDs, prompt SHAs, evaluator versions, and dataset SHA — that file is the reproducibility contract.
 
 ## Status
 
