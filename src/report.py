@@ -38,6 +38,41 @@ from plotly.subplots import make_subplots
 
 from src.openai_helpers import REPO_ROOT
 
+
+def _ci95(series: pd.Series) -> tuple[float, float]:
+    """Normal-approximation 95% CI for the mean. Returns (lo, hi)."""
+    s = series.dropna()
+    n = len(s)
+    if n < 2:
+        return (float("nan"), float("nan"))
+    m = float(s.mean())
+    se = float(s.std(ddof=1)) / (n ** 0.5)
+    return (m - 1.96 * se, m + 1.96 * se)
+
+
+def _icc2_one_way(matrix: pd.DataFrame) -> float:
+    """ICC(2,1) for a (subjects × raters) matrix. Subjects = rows.
+
+    Two-way random-effects, single-rater, absolute-agreement. Returns NaN if
+    the matrix has fewer than 2 subjects or 2 raters or any missing data.
+    """
+    m = matrix.dropna()
+    n, k = m.shape
+    if n < 2 or k < 2:
+        return float("nan")
+    grand = m.values.mean()
+    ssb = k * ((m.mean(axis=1) - grand) ** 2).sum()
+    ssw = ((m.values - m.mean(axis=1).values[:, None]) ** 2).sum()
+    ssr = n * ((m.mean(axis=0) - grand) ** 2).sum()
+    sse = ssw - ssr
+    msb = ssb / (n - 1)
+    msr = ssr / (k - 1)
+    mse = sse / ((n - 1) * (k - 1))
+    denom = msb + (k - 1) * mse + (k * (msr - mse) / n)
+    if denom <= 0:
+        return float("nan")
+    return float((msb - mse) / denom)
+
 RESULTS_DIR = REPO_ROOT / "data" / "results"
 REPORTS_DIR = REPO_ROOT / "reports"
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
@@ -66,19 +101,23 @@ def _generations(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def section_hook(df: pd.DataFrame) -> str:
-    g = _generations(df)
+    g = _generations(df).dropna(subset=["delta_ensemble"])
     rows = []
     for model, sub in g.groupby("model", dropna=False):
         mean_d = sub["delta_ensemble"].mean()
         median_d = sub["delta_ensemble"].median()
+        lo, hi = _ci95(sub["delta_ensemble"])
         n = len(sub)
         rows.append(
             f"<tr><td><b>{html.escape(str(model))}</b></td>"
-            f"<td>{mean_d:+.2f}</td><td>{median_d:+.2f}</td><td>{n:,}</td></tr>"
+            f"<td>{mean_d:+.2f}</td>"
+            f"<td>[{lo:+.2f}, {hi:+.2f}]</td>"
+            f"<td>{median_d:+.2f}</td>"
+            f"<td>{n:,}</td></tr>"
         )
     table = (
         "<table class='hook'><thead><tr>"
-        "<th>Model</th><th>Mean Δ</th><th>Median Δ</th><th>n cells</th>"
+        "<th>Model</th><th>Mean Δ</th><th>95% CI</th><th>Median Δ</th><th>n cells</th>"
         "</tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table>"
@@ -97,6 +136,7 @@ def section_hook(df: pd.DataFrame) -> str:
   <p class="caption">
     Δ = ensemble grade-level estimate − the standard's target grade.
     Positive Δ means the explanation is harder than the standard expects.
+    95% CI uses the normal approximation (n is large per cell).
   </p>
 </section>
 """
@@ -118,14 +158,18 @@ def section_data(df: pd.DataFrame) -> str:
         col=2,
     )
     fig.update_layout(showlegend=False, height=320, margin=dict(t=40, l=10, r=10, b=10))
+    n_models = g["model"].nunique()
+    n_prompts = g["prompt_name"].nunique()
+    n_wordings = g["wording"].nunique()
     return f"""
 <section id="data">
   <h2>2. The data</h2>
   <p>
-    n = {g['standard_id'].nunique()} CCSS standards, drawn from a
-    simple-random parent sample (seed {int(df['run_id'].iloc[0][1:6]) if str(df['run_id'].iloc[0]).startswith('v') else 'see manifest'}).
-    Each standard goes through 3 models × 3 prompts × 2 wordings = 18 cells,
-    for a total of {len(g):,} generations.
+    n = {g['standard_id'].nunique()} CCSS standards (Multi-State Common Core),
+    drawn by simple random sampling from a parent pool of 200. Each
+    standard goes through {n_models} models × {n_prompts} prompts × {n_wordings} wordings,
+    for a total of {len(g):,} generations. Run manifest pins the seed,
+    sample SHA, and tool versions.
   </p>
   {_fig_to_div(fig, include_js=False)}
 </section>
@@ -188,6 +232,8 @@ def section_prompt(df: pd.DataFrame) -> str:
 
 
 def section_wording(df: pd.DataFrame) -> str:
+    from scipy import stats as _stats
+
     g = _generations(df).dropna(subset=["delta_ensemble"])
     pivot = (
         g.pivot_table(
@@ -199,6 +245,11 @@ def section_wording(df: pd.DataFrame) -> str:
         .dropna()
         .reset_index()
     )
+    if "raw" not in pivot.columns or "simplified" not in pivot.columns:
+        return (
+            "<section id='wording'><h2>5. Wording intervention</h2>"
+            "<p>(simplified arm not run — skipping)</p></section>"
+        )
     pivot["paired_diff"] = pivot["raw"] - pivot["simplified"]
     fig = px.box(
         pivot,
@@ -211,19 +262,34 @@ def section_wording(df: pd.DataFrame) -> str:
     )
     fig.add_hline(y=0, line_dash="dash", line_color="black", opacity=0.6)
     fig.update_layout(height=360, margin=dict(t=60, l=10, r=10, b=10), showlegend=False)
-    diff_summary = (
-        pivot.groupby("model")["paired_diff"]
-        .agg(["mean", "median", "std", "count"])
-        .round(2)
-        .to_html(border=0, classes="summary")
-    )
+    diff_rows = []
+    for model, sub in pivot.groupby("model"):
+        d = sub["paired_diff"].dropna()
+        if len(d) < 2:
+            t_stat, p_val = float("nan"), float("nan")
+        else:
+            t_stat, p_val = _stats.ttest_1samp(d, popmean=0.0)
+        diff_rows.append(
+            {
+                "model": model,
+                "n": len(d),
+                "mean_diff": float(d.mean()),
+                "sd_diff": float(d.std(ddof=1)) if len(d) > 1 else float("nan"),
+                "t": float(t_stat) if t_stat == t_stat else float("nan"),
+                "p_value": float(p_val) if p_val == p_val else float("nan"),
+            }
+        )
+    diff_df = pd.DataFrame(diff_rows).round(3)
+    diff_summary = diff_df.to_html(index=False, border=0, classes="summary")
     return f"""
 <section id="wording">
   <h2>5. Does the model mirror the standard's wording?</h2>
   <p>
     The simplified arm rewrites each standard at a 4th-grade reading level
     before generation. If the model anchors on the standard's register,
-    Δ(raw) − Δ(simplified) is positive.
+    Δ(raw) − Δ(simplified) is positive (raw wording yields a higher-grade
+    explanation than simplified). Paired t-test against zero per model below;
+    treat unadjusted p-values as exploratory.
   </p>
   {_fig_to_div(fig, include_js=False)}
   {diff_summary}
@@ -281,12 +347,24 @@ def section_cross_model(df: pd.DataFrame) -> str:
     fig.update_traces(diagonal_visible=False)
     fig.update_layout(margin=dict(t=60, l=10, r=10, b=10))
     corr = pivot.corr().round(2).to_html(border=0, classes="summary")
+    icc = _icc2_one_way(pivot)
+    icc_str = f"{icc:.2f}" if icc == icc else "n/a"
+    # direction-preservation: of standards, what fraction has all-same-sign Δ?
+    sign_match = (
+        ((pivot > 0).all(axis=1)) | ((pivot < 0).all(axis=1))
+    ).mean()
     return f"""
 <section id="cross-model">
   <h2>7. Cross-model agreement</h2>
   <p>If the three models drift the same direction on the same standards, their
-  per-standard Δs are correlated. Pearson r matrix below.</p>
+  per-standard Δs are correlated.</p>
+  <p>
+    <b>ICC(2,1)</b> across models = {icc_str} (two-way random-effects, single-rater,
+    absolute-agreement on per-standard mean Δ). <b>Direction-preservation:</b>
+    {sign_match:.0%} of standards have the same sign of Δ across all models.
+  </p>
   {_fig_to_div(fig, include_js=False)}
+  <h3>Pearson r matrix</h3>
   {corr}
 </section>
 """
