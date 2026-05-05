@@ -107,6 +107,16 @@ The pre-registration freeze (`pre-reg-v1` tag) has not been cut. Treat this run 
 - Decide scope item 2 (multi-grade items): the per-band breakdown shows HS items drift least; either drop, band, or per-item draw is now a *measured* trade-off rather than a hypothetical.
 - Finalize the Quarto rendering of `research-proposal.qmd` with these numbers as the pilot results.
 
+## Out of scope for v0 (follow-up candidate)
+
+The reframe above suggests a clean intervention study — **rewrite the full prompt (S/M/L scaffolding + standard wording + grade spec) at the standard's own target reading level and re-run the cube** — would test whether the +3.3 gap closes. We deliberately keep this **out of scope for v0**:
+
+- v0 is a measurement study. Its central question is "do LLM outputs land at the target grade?" — and the answer is "no, by ~3 grade levels, which is mostly inherited from the prompt." That's a complete finding.
+- The intervention question — "can we close the gap by writing prompts at-target?" — is a separate publication. Mixing measurement with intervention in v0 dilutes both.
+- Added scope.md entry under "Out of scope (explicit)" so the deferral is recorded next to the other follow-ups.
+
+The follow-up is *cheap to run* (same ~$5 budget, same evaluator stack, just one new wording condition) and would likely produce a strong positive result given the decomposition. Sequenced after the pre-reg freeze and v0 writeup.
+
 ## Artifacts
 
 - Manifest: `data/processed/v0_run1_manifest.json`

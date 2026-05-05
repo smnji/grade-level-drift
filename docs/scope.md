@@ -145,6 +145,7 @@ The wording rewriter uses one fixed model + prompt; the rewriter identity is log
 - LLM-as-judge evaluation (rejected on reproducibility grounds; see deterministic-pivot log entry)
 - SAP-rubric qualitative dimensions (register, abstraction, knowledge demands) — these are deferred Q5 territory
 - Cross-family model replication (Claude, Gemini, open-weights) — deferred follow-up
+- **Prompt-as-target-grade intervention.** Rewriting the *full* prompt (S/M/L scaffolding + standard wording + grade spec) at the standard's own target reading level. v0 surfaced that ~all of the +3.3 grade-level "drift" sits in the prompt itself (mean prompt − target = +3.19; mean output − prompt = +0.10; see [research-log/2026-05-05-v0-run1-results.md](research-log/2026-05-05-v0-run1-results.md)). The simplified-wording arm is a weak version of this — it only simplified the standard's description, not the surrounding scaffolding, and shaved 0.5 grade levels off drift. A separate intervention study would test whether rewriting the full prompt at-target closes the gap. v0 is a measurement study; the intervention belongs in its own publication.
 
 ## Decisions still open
 
